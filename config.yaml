@@ -96,8 +96,9 @@ bar:
       label: "  {percent_usage}%"
       refresh_interval_ms: 1000
     - type: "gpu"
-      label: " 󰐿 󰫗 󱛵 GPU: {percent_usage}%" #testing
+      label: " 󰐿 {percent_usage}%" #testing
       refresh_interval_ms: 1000
+        #label: " 󰐿 󰫗 󱛵 GPU: {percent_usage}%" #possible icons
     - type: "memory"
       label: " \ue266 {percent_usage}%"
       refresh_interval_ms: 1000
