@@ -93,14 +93,18 @@ bar:
   components_right:
     - type: "system tray"
     - type: "cpu"
-      label: " CPU: {percent_usage}% "
+      label: "  {percent_usage}%"
       refresh_interval_ms: 1000
     - type: "gpu"
-      label: " GPU: {percent_usage}% "
+      label: " GPU: {percent_usage}%"
       refresh_interval_ms: 1000
     - type: "memory"
-      label: " RAM: {percent_usage}% "
+      label: " \ue266 {percent_usage}%"
       refresh_interval_ms: 1000
+    - type: "battery"
+      label_draining: "   {battery_level}% remaining "
+      label_power_saver: "   {battery_level}% "
+      label_charging: "   {battery_level}% "
     - type: "tiling direction"
       label_horizontal: "⮂"
       label_vertical: "⮁"
@@ -117,7 +121,7 @@ bar:
       padding: "0 3px"
       # Documentation on formatting date/time string:
       # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
-      time_formatting: "hh:mm tt  MM/dd/yyyy"
+      time_formatting: "hh:mmtt MM/dd/yyyy"
         # time_formatting: "hh:mm tt  ddd/MMM/d"
 
 workspaces:
