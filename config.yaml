@@ -3,7 +3,7 @@ general:
   focus_follows_cursor: false
 
   # Whether to jump the cursor between windows focused by the WM.
-  cursor_follow_focus: false
+  cursor_follows_focus: false
 
   # Whether to switch back and forth between the previously focused workspace
   # when focusing the current workspace.
@@ -18,14 +18,14 @@ general:
   # *Strongly* recommended to set to 'false'. Whether to globally enable/disable
   # window transition animations (on minimize, close, etc). Set to 'unchanged'
   # to make no setting changes.
-  window_animations: "unchanged"
+  window_animations: "false"
 
 gaps:
   # Gap between adjacent windows.
   inner_gap: "10px"
 
   # Gap between windows and the screen edge.
-  outer_gap: "10px"
+  outer_gap: "6px 10px"
 
 # Highlight active/inactive windows with a colored border.
 # ** Exclusive to Windows 11 due to API limitations.
