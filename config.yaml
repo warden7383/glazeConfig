@@ -70,7 +70,7 @@ bar:
   height: "30px"
   position: "top"
   opacity: 1.0
-  background: *crust #"#20242cc4"
+  background: *crust #"transparent" #*crust #"#20242cc4"
   foreground: *mauve #"#ffffff"
   font_family: "JetBrainsMonoNL Nerd Font" #"Segoe UI"
   font_size: "12px"
