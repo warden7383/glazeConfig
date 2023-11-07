@@ -1,3 +1,31 @@
+#macchiato colorscheme
+rosewater: &rosewater "#f4dbd6"
+flamingo: &flamingo "#f0c6c6"
+pink: &pink "#f5bde6"
+mauve: &mauve "#c6a0f6"
+red: &red "#ed8796"
+maroon: &maroon "#ee99a0"
+peach: &peach "#f5a97f"
+yellow: &yellow "#eed49f"
+green: &green "#a6da95"
+teal: &teal "#8bd5ca"
+sky: &sky "#91d7e3"
+sapphire: &sapphire "#7dc4e4"
+blue: &blue "#8aadf4"
+lavender: &lavender "#b7bdf8"
+text: &text "#cad3f5"
+subtext1: &subtext1 "#b8c0e0"
+subtext0: &subtext0 "#a5adcb"
+overlay2: &overlay2 "#939ab7"
+overlay1: &overlay1 "#8087a2"
+overlay0: &overlay0 "#6e738d"
+surface2: &surface2 "#5b6078"
+surface1: &surface1 "#494d64"
+surface0: &surface0 "#363a4f"
+base: &base "#24273a"
+mantle: &mantle "#1e2030"
+crust: &crust "#24283b" #181926"
+
 general:
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: false
@@ -37,34 +65,6 @@ focus_borders:
   inactive:
     enabled: false
     color: "#ff0000"
-#macchiato colorscheme
-rosewater: &rosewater "#f4dbd6"
-flamingo: &flamingo "#f0c6c6"
-pink: &pink "#f5bde6"
-mauve: &mauve "#c6a0f6"
-red: &red "#ed8796"
-maroon: &maroon "#ee99a0"
-peach: &peach "#f5a97f"
-yellow: &yellow "#eed49f"
-green: &green "#a6da95"
-teal: &teal "#8bd5ca"
-sky: &sky "#91d7e3"
-sapphire: &sapphire "#7dc4e4"
-blue: &blue "#8aadf4"
-lavender: &lavender "#b7bdf8"
-text: &text "#cad3f5"
-subtext1: &subtext1 "#b8c0e0"
-subtext0: &subtext0 "#a5adcb"
-overlay2: &overlay2 "#939ab7"
-overlay1: &overlay1 "#8087a2"
-overlay0: &overlay0 "#6e738d"
-surface2: &surface2 "#5b6078"
-surface1: &surface1 "#494d64"
-surface0: &surface0 "#363a4f"
-base: &base "#24273a"
-mantle: &mantle "#1e2030"
-crust: &crust "#24283b" #181926"
-
 
 bar:
   height: "30px"
@@ -74,10 +74,12 @@ bar:
   foreground: *mauve #"#ffffff"
   font_family: "JetBrainsMonoNL Nerd Font" #"Segoe UI"
   font_size: "12px"
-  padding: "4px 6px"
+  padding: "3px 6px"
   offset_x: "9"
   offset_y: "5"
   border_radius: "6"
+  border_width: "1"
+  border_color: *lavender
   # padding: "5px"
   components_left:
     - type: "workspaces"
@@ -86,6 +88,8 @@ bar:
       displayed_workspace_background: *surface0 #"#00000033"
       default_workspace_background: "transparent"
       padding: "2px 2px"
+      # border_width: 2px
+      # border_radius: 5px
   components_center:
     - type: "window title"
       foreground: *green
@@ -113,6 +117,8 @@ bar:
       foreground: *blue
       margin: "0 4px"
       padding: "0 8px"
+      border_width: "0 0 3 0"
+      border_color: *peach
     - type: "binding mode"
       background: *red #"#ffffff33"
       foreground: *crust
@@ -170,13 +176,13 @@ binding_modes:
 keybindings:
   # Shift focus in a given direction.
   - command: "focus left"
-    bindings: ["Alt+H", "Alt+Left"]
+    bindings: ["Alt+H"]
   - command: "focus right"
-    bindings: ["Alt+L", "Alt+Right"]
+    bindings: ["Alt+L"]
   - command: "focus up"
-    bindings: ["Alt+K", "Alt+Up"]
+    bindings: ["Alt+K"]
   - command: "focus down"
-    bindings: ["Alt+J", "Alt+Down"]
+    bindings: ["Alt+J"]
 
   # Move focused window in a given direction.
   - command: "move left"
