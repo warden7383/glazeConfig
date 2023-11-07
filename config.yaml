@@ -156,6 +156,10 @@ bar:
     - type: "memory"
       label: " \ue266 {percent_usage}%"
       refresh_interval_ms: 1000
+    - type: "battery"
+      label_draining: "   {battery_level}% remaining "
+      label_power_saver: "   {battery_level}% "
+      label_charging: "   {battery_level}% "
     - type: "tiling direction"
       label_horizontal: "⮂"
       label_vertical: "⮁"
