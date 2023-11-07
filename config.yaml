@@ -81,11 +81,9 @@ bar:
   border_color: *lavender
   # padding: "5px"
   components_left:
-    # - type: "text"
-    #   text: "testing"
     - type: "image"
-      # source: "D:\\pacman.png"
       source: "C:\\Users\\NgAnd\\.glaze-wm\\pacman.png" #change to your repo config path with the image
+      source: "C:\\Users\\Andrew Ng\\.glaze-wm\\config.yaml"
     - type: "workspaces"
       focused_workspace_background: "transparent" #"#ffffff33" # *mauve
       focused_workspace_foreground: "#3fe86c" # *crust #red
@@ -93,7 +91,7 @@ bar:
       default_workspace_background: "transparent"
       label: "testttt"
       padding: "0px 0px"
-      # padding: "2px 2px"
+      # padding: "2px 2px" # initial value
       font_size: "16px"
       # border_width: 2px
       # border_radius: 5px
@@ -197,6 +195,9 @@ window_rules:
 
   - command: "move to workspace 2"
     match_process_name: "Discord"
+  
+  - command: "ignore"
+    match_process_name: "Flow.Launcher"
   
   # Some applications (eg. Steam) have borders that extend past the normal border size.
   - command: "resize borders 0px -7px -7px -7px"
