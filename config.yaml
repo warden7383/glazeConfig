@@ -70,7 +70,7 @@ bar:
   position: "top"
   opacity: 1.0
   background: *crust #"#20242cc4"
-  foreground: *mauve #"#ffffff"
+  foreground: *mauve #"#ffffff" # *mauve
   font_family: "JetBrainsMonoNL Nerd Font" #"Segoe UI"
   font_size: "12px"
   padding: "3px 6px"
@@ -85,13 +85,16 @@ bar:
     #   text: "testing"
     - type: "image"
       # source: "D:\\pacman.png"
-      source: "C:\\Users\\NgAnd\\.glaze-wm\\pacman.png"
+      source: "C:\\Users\\NgAnd\\.glaze-wm\\pacman.png" #change to your repo config path with the image
     - type: "workspaces"
-      focused_workspace_background: *mauve #"#ffffff33"
-      focused_workspace_foreground: *crust
-      displayed_workspace_background: *surface0 #"#00000033"
+      focused_workspace_background: "transparent" #"#ffffff33" # *mauve
+      focused_workspace_foreground: "#3fe86c" # *crust #red
+      displayed_workspace_background: *yellow # *surface0 #"#00000033"
       default_workspace_background: "transparent"
-      padding: "2px 2px"
+      label: "testttt"
+      padding: "0px 0px"
+      # padding: "2px 2px"
+      font_size: "16px"
       # border_width: 2px
       # border_radius: 5px
   components_center:
@@ -141,16 +144,42 @@ bar:
 
 workspaces:
   - name: "1"
-    display_name: "1 Main"
+    # display_name: "1 Main"
+    # display_name: "" # possible icons for workspace
+    display_name: ""
   - name: "2"
-    display_name: "2 Discord"
+    # display_name: ""
+    # display_name: ""
+    display_name: ""
+    # display_name: "2 Discord"
   - name: "3"
+    # display_name: ""
+    # display_name: ""
+    display_name: ""
   - name: "4"
+    # display_name: ""
+    # display_name: ""
+    display_name: ""
   - name: "5"
+    # display_name: ""
+    # display_name: ""
+    display_name: ""
   - name: "6"
+    # display_name: ""
+    # display_name: ""
+    display_name: ""
   - name: "7"
+    # display_name: ""
+    # display_name: ""
+    display_name: ""
   - name: "8"
+    # display_name: ""
+    # display_name: ""
+    display_name: ""
   - name: "9"
+    # display_name: ""
+    # display_name: ""
+    display_name: ""
 
 window_rules:
   # Task Manager requires admin privileges to manage and should be ignored unless running
