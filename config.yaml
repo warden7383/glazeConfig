@@ -38,7 +38,7 @@ general:
   toggle_workspace_on_refocus: true
 
   # Whether to show floating windows as always on top.
-  show_floating_on_top: true
+  show_floating_on_top: false
 
   # Amount to move floating windows by (eg. when using `alt+<hjkl>` on a floating window)
   floating_window_move_amount: "5%"
@@ -61,7 +61,6 @@ focus_borders:
   active:
     enabled: true
     color: *lavender #"#0000ff"
-
   inactive:
     enabled: false
     color: "#ff0000"
@@ -82,6 +81,13 @@ bar:
   border_color: *lavender
   # padding: "5px"
   components_left:
+    # - type: "text"
+    #   text: "testing"
+    - type: "image"
+      # source: "D:\\pacman.png"
+      source: "C:\\Users\\$env:user\\.glaze-wm\\pacman.png"
+      source: "C:\\Users\\NgAnd\\.glaze-wm\\pacman.png"
+# C:\Users\NgAnd\.glaze-wm\pacman.png
     - type: "workspaces"
       focused_workspace_background: *mauve #"#ffffff33"
       focused_workspace_foreground: *crust
@@ -91,9 +97,13 @@ bar:
       # border_width: 2px
       # border_radius: 5px
   components_center:
+    - type: "text"
+      text: "󰍹 "
+      # text: " 󰌢  󰍹 "
+      font_size: "18"
     - type: "window title"
       foreground: *green
-      padding: "0 8px"
+      padding: "0 1px"
   components_right:
     - type: "system tray"
     - type: "cpu"
@@ -161,9 +171,6 @@ window_rules:
   - command: "move to workspace 2"
     match_process_name: "Discord"
   
-  - command: "move to workspace 9"
-    match_process_name: "Notepad"
-
   # Some applications (eg. Steam) have borders that extend past the normal border size.
   - command: "resize borders 0px -7px -7px -7px"
     match_process_name: "steam"
