@@ -85,9 +85,7 @@ bar:
     #   text: "testing"
     - type: "image"
       # source: "D:\\pacman.png"
-      source: "C:\\Users\\$env:user\\.glaze-wm\\pacman.png"
       source: "C:\\Users\\NgAnd\\.glaze-wm\\pacman.png"
-# C:\Users\NgAnd\.glaze-wm\pacman.png
     - type: "workspaces"
       focused_workspace_background: *mauve #"#ffffff33"
       focused_workspace_foreground: *crust
