@@ -111,13 +111,8 @@ bar:
   height: "30px"
   position: "top"
   opacity: 1.0
-<<<<<<< HEAD
-  background: *crust #"#20242cc4"
-  foreground: *mauve #"#ffffff" # *mauve
-=======
   background: *crust #"transparent" #*crust #"#20242cc4"
   foreground: *mauve #"#ffffff"
->>>>>>> glazePC
   font_family: "JetBrainsMonoNL Nerd Font" #"Segoe UI"
   font_size: "12px"
   padding: "3px 6px"
