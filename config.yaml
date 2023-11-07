@@ -109,32 +109,71 @@ bar:
   height: "30px"
   position: "top"
   opacity: 1.0
-  background: *crust #"transparent" #*crust #"#20242cc4"
+  # background: *crust #"transparent" #*crust #"#20242cc4"
   foreground: *mauve #"#ffffff"
+  background: "transparent"
   font_family: "JetBrainsMonoNL Nerd Font" #"Segoe UI"
   font_size: "12px"
-  padding: "3px 6px"
+  padding: "0px 6px"
   offset_x: "9"
   offset_y: "5"
-  border_radius: "6"
-  border_width: "1"
-  border_color: *lavender
+  # border_radius: "6"
+  # border_width: "1"
+  # border_color: *lavender
   # padding: "5px"
   components_left:
+    - type: "text"
+      text: ""
+      border_width: "0 0 0 3"
+      border_radius: "6"
+      margin: "0 5 0 0"
+      border_color: *blue
+      # padding: "5 1 5 1"
+      background: *blue
+    - type: "text"
+      text: ""
+      background: *crust
+      margin: "0px -6px 0px -6px"
+      border_width: "2 0 2 0"
+      border_color: *blue
+
     - type: "image"
       #change to your repo config path with the image
-      source: "C:\\Users\\Andrew Ng\\.glaze-wm\\pacman.png"
+      # source: "C:\\Users\\Andrew Ng\\.glaze-wm\\pacman.png"
+      # site: https://icons8.com/icons/set/pacman
+      source: "C:\\Users\\Andrew Ng\\.glaze-wm\\icons8-pacman-24.png"
+      background: *crust
+      border_width: "2 0 2 0"
+      border_radius: "6"
+      padding: "1 4 1 0"
+      border_color: *blue
+    # making the border after the pacman img 
+    - type: "text"
+      text: ""
+      background: *crust
+      margin: "0px -6px 0px -6px"
+      border_width: "2 0 2 0"
+      border_color: *blue
     - type: "workspaces"
       focused_workspace_background: "transparent" #"#ffffff33" # *mauve
       focused_workspace_foreground: "#3fe86c" # *crust #red
       displayed_workspace_background: "transparent" #*yellow # *surface0 #"#00000033"
       default_workspace_background: "transparent"
-      label: "testttt"
-      padding: "0px 0px"
+      background: *crust
+      padding: "0px 9px 0px 0px"
       # padding: "2px 2px" # initial value
+      margin: "0 -1 0 -5"
       font_size: "16px"
-      # border_width: 2px
-      # border_radius: 5px
+      border_width: "2 0 2 0"
+      border_radius: "5"
+      border_color: *blue
+    # the right border for workspaces
+    - type: "text"
+      text: ""
+      border_width: "0 3 0 0"
+      border_radius: "3"
+      margin: "0 0 0 -9"
+      border_color: *blue
   components_center:
     - type: "text"
       text: "󰍹 "
@@ -143,6 +182,9 @@ bar:
     - type: "window title"
       foreground: *green
       padding: "0 1px"
+      background: "blue"
+      border_width: "4"
+      border_radius: "10"
   components_right:
     - type: "system tray"
     - type: "cpu"
