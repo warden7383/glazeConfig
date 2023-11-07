@@ -1,42 +1,3 @@
-general:
-  # Whether to automatically focus windows underneath the cursor.
-  focus_follows_cursor: false
-
-  # Whether to jump the cursor between windows focused by the WM.
-  cursor_follow_focus: false
-
-  # Whether to switch back and forth between the previously focused workspace
-  # when focusing the current workspace.
-  toggle_workspace_on_refocus: true
-
-  # Whether to show floating windows as always on top.
-  show_floating_on_top: true
-
-  # Amount to move floating windows by (eg. when using `alt+<hjkl>` on a floating window)
-  floating_window_move_amount: "5%"
-
-  # *Strongly* recommended to set to 'false'. Whether to globally enable/disable
-  # window transition animations (on minimize, close, etc). Set to 'unchanged'
-  # to make no setting changes.
-  window_animations: "unchanged"
-
-gaps:
-  # Gap between adjacent windows.
-  inner_gap: "10px"
-
-  # Gap between windows and the screen edge.
-  outer_gap: "10px"
-
-# Highlight active/inactive windows with a colored border.
-# ** Exclusive to Windows 11 due to API limitations.
-focus_borders:
-  active:
-    enabled: true
-    color: *lavender #"#0000ff"
-
-  inactive:
-    enabled: false
-    color: "#ff0000"
 #macchiato colorscheme
 rosewater: &rosewater "#f4dbd6"
 flamingo: &flamingo "#f0c6c6"
@@ -65,6 +26,44 @@ base: &base "#24273a"
 mantle: &mantle "#1e2030"
 crust: &crust "#24283b" #181926"
 
+general:
+  # Whether to automatically focus windows underneath the cursor.
+  focus_follows_cursor: false
+
+  # Whether to jump the cursor between windows focused by the WM.
+  cursor_follow_focus: false
+
+  # Whether to switch back and forth between the previously focused workspace
+  # when focusing the current workspace.
+  toggle_workspace_on_refocus: true
+
+  # Whether to show floating windows as always on top.
+  show_floating_on_top: false
+
+  # Amount to move floating windows by (eg. when using `alt+<hjkl>` on a floating window)
+  floating_window_move_amount: "5%"
+
+  # *Strongly* recommended to set to 'false'. Whether to globally enable/disable
+  # window transition animations (on minimize, close, etc). Set to 'unchanged'
+  # to make no setting changes.
+  window_animations: "unchanged"
+
+gaps:
+  # Gap between adjacent windows.
+  inner_gap: "10px"
+
+  # Gap between windows and the screen edge.
+  outer_gap: "10px"
+
+# Highlight active/inactive windows with a colored border.
+# ** Exclusive to Windows 11 due to API limitations.
+focus_borders:
+  active:
+    enabled: true
+    color: *lavender #"#0000ff"
+  inactive:
+    enabled: false
+    color: "#ff0000"
 
 bar:
   height: "30px"
@@ -74,30 +73,46 @@ bar:
   foreground: *mauve #"#ffffff"
   font_family: "JetBrainsMonoNL Nerd Font" #"Segoe UI"
   font_size: "12px"
-  padding: "4px 6px"
+  padding: "3px 6px"
   offset_x: "9"
   offset_y: "5"
   border_radius: "6"
+  border_width: "1"
+  border_color: *lavender
   # padding: "5px"
   components_left:
+    # - type: "text"
+    #   text: "testing"
+    - type: "image"
+      # source: "D:\\pacman.png"
+      source: "C:\\Users\\$env:user\\.glaze-wm\\pacman.png"
+      source: "C:\\Users\\NgAnd\\.glaze-wm\\pacman.png"
+# C:\Users\NgAnd\.glaze-wm\pacman.png
     - type: "workspaces"
       focused_workspace_background: *mauve #"#ffffff33"
       focused_workspace_foreground: *crust
       displayed_workspace_background: *surface0 #"#00000033"
       default_workspace_background: "transparent"
       padding: "2px 2px"
+      # border_width: 2px
+      # border_radius: 5px
   components_center:
+    - type: "text"
+      text: "󰍹 "
+      # text: " 󰌢  󰍹 "
+      font_size: "18"
     - type: "window title"
       foreground: *green
-      padding: "0 8px"
+      padding: "0 1px"
   components_right:
     - type: "system tray"
     - type: "cpu"
       label: "  {percent_usage}%"
       refresh_interval_ms: 1000
     - type: "gpu"
-      label: " 󰐿 󰫗 󱛵 GPU: {percent_usage}%" #testing
+      label: " 󰐿 {percent_usage}%" #testing
       refresh_interval_ms: 1000
+        #label: " 󰐿 󰫗 󱛵 GPU: {percent_usage}%" #possible icons
     - type: "memory"
       label: " \ue266 {percent_usage}%"
       refresh_interval_ms: 1000
@@ -112,6 +127,8 @@ bar:
       foreground: *blue
       margin: "0 4px"
       padding: "0 8px"
+      border_width: "0 0 3 0"
+      border_color: *peach
     - type: "binding mode"
       background: *red #"#ffffff33"
       foreground: *crust
@@ -128,6 +145,7 @@ workspaces:
   - name: "1"
     display_name: "1 Main"
   - name: "2"
+    display_name: "2 Discord"
   - name: "3"
   - name: "4"
   - name: "5"
@@ -146,6 +164,13 @@ window_rules:
   - command: "set floating"
     match_class_name: "#32770"
 
+  # Set the file explorer to float upon startup
+  - command: "set floating"
+    match_process_name: "explorer"
+
+  - command: "move to workspace 2"
+    match_process_name: "Discord"
+  
   # Some applications (eg. Steam) have borders that extend past the normal border size.
   - command: "resize borders 0px -7px -7px -7px"
     match_process_name: "steam"
@@ -169,13 +194,13 @@ binding_modes:
 keybindings:
   # Shift focus in a given direction.
   - command: "focus left"
-    bindings: ["Alt+H", "Alt+Left"]
+    bindings: ["Alt+H"]
   - command: "focus right"
-    bindings: ["Alt+L", "Alt+Right"]
+    bindings: ["Alt+L"]
   - command: "focus up"
-    bindings: ["Alt+K", "Alt+Up"]
+    bindings: ["Alt+K"]
   - command: "focus down"
-    bindings: ["Alt+J", "Alt+Down"]
+    bindings: ["Alt+J"]
 
   # Move focused window in a given direction.
   - command: "move left"
