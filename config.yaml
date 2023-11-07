@@ -135,6 +135,7 @@ workspaces:
   - name: "1"
     display_name: "1 Main"
   - name: "2"
+    display_name: "2 Discord"
   - name: "3"
   - name: "4"
   - name: "5"
@@ -152,6 +153,16 @@ window_rules:
   # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
   - command: "set floating"
     match_class_name: "#32770"
+
+  # Set the file explorer to float upon startup
+  - command: "set floating"
+    match_process_name: "explorer"
+
+  - command: "move to workspace 2"
+    match_process_name: "Discord"
+  
+  - command: "move to workspace 9"
+    match_process_name: "Notepad"
 
   # Some applications (eg. Steam) have borders that extend past the normal border size.
   - command: "resize borders 0px -7px -7px -7px"
