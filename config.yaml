@@ -122,12 +122,12 @@ bar:
   # padding: "5px"
   components_left:
     - type: "image"
-      source: "C:\\Users\\NgAnd\\.glaze-wm\\pacman.png" #change to your repo config path with the image
-      source: "C:\\Users\\Andrew Ng\\.glaze-wm\\config.yaml"
+      #change to your repo config path with the image
+      source: "C:\\Users\\Andrew Ng\\.glaze-wm\\pacman.png"
     - type: "workspaces"
       focused_workspace_background: "transparent" #"#ffffff33" # *mauve
       focused_workspace_foreground: "#3fe86c" # *crust #red
-      displayed_workspace_background: *yellow # *surface0 #"#00000033"
+      displayed_workspace_background: "transparent" #*yellow # *surface0 #"#00000033"
       default_workspace_background: "transparent"
       label: "testttt"
       padding: "0px 0px"
@@ -178,15 +178,18 @@ bar:
         # time_formatting: "hh:mm tt  ddd/MMM/d"
 
 workspaces:
+  # not monitor 1 = horizontal monitor and not the vertical monitor despite the settings identifying otherwise
   - name: "1"
     # display_name: "1 Main"
     # display_name: "" # possible icons for workspace
     display_name: ""
+    bind_to_monitor: 1
   - name: "2"
     # display_name: ""
     # display_name: ""
     display_name: ""
     # display_name: "2 Discord"
+    bind_to_monitor: 1
   - name: "3"
     # display_name: ""
     # display_name: ""
@@ -215,6 +218,7 @@ workspaces:
     # display_name: ""
     # display_name: ""
     display_name: ""
+    bind_to_monitor: 2
 
 window_rules:
   # Task Manager requires admin privileges to manage and should be ignored unless running
