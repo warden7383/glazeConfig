@@ -38,7 +38,7 @@ general:
   toggle_workspace_on_refocus: true
 
   # Whether to show floating windows as always on top.
-  show_floating_on_top: true
+  show_floating_on_top: false
 
   # Amount to move floating windows by (eg. when using `alt+<hjkl>` on a floating window)
   floating_window_move_amount: "5%"
