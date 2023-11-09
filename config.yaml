@@ -289,6 +289,9 @@ window_rules:
   # Some applications (eg. Steam) have borders that extend past the normal border size.
   - command: "resize borders 0px -7px -7px -7px"
     match_process_name: "steam"
+  
+  - command: "set floating" 
+    match_process_name: "/AVGUI|AvConsent|AvDump|AvEmUpdate|AVGSvc|avgToolsSvc|AvLaunch|aswidsagent|aswEngSrv|aswChLic|aswAvBootTimeScanShMin|ashUpd|ashQuick|sched|SupportTool|VisthAux|wsc_proxy/"
 
 binding_modes:
   - name: "resize"
