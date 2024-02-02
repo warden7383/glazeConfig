@@ -159,14 +159,10 @@ bar:
     #   border_color: *crust
 
     - type: "image"
-<<<<<<< HEAD
       # source: "D:\\pacman.png"
       source : "C:\\Users\\NgAnd\\.glaze-wm\\icons8-pacman-24.png" #change to your repo config path with the image
-=======
       #change to your repo config path with the image
-      # source: "C:\\Users\\Andrew Ng\\.glaze-wm\\pacman.png"
       # site: https://icons8.com/icons/set/pacman
-      source: "C:\\Users\\Andrew Ng\\.glaze-wm\\icons8-pacman-24.png"
       background: *crust
       border_width: "0 0 0 0"
       border_radius: "6"
@@ -180,7 +176,6 @@ bar:
       border_width: "2 0 2 0"
       border_color: *crust
 
->>>>>>> master
     - type: "workspaces"
       focused_workspace_background: "transparent" #"#ffffff33" # *mauve
       focused_workspace_foreground: "#3fe86c" # *crust #red
