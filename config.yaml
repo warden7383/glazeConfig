@@ -208,7 +208,7 @@ bar:
       padding: "0 0 0 5"
       background: *crust
       foreground: *blue
-      label_not_playing: ""
+      label_not_playing: "󰓇 No Song Playing"
       label_paused: "󰓇 {song_title}  {artist_name} 󰏤 " #
       label_playing: " {song_title}  {artist_name} "
       max_title_length: 20
