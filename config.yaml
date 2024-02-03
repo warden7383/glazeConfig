@@ -111,14 +111,64 @@ focus_borders:
     enabled: false
     color: "#ff0000"
 
-bar:
-  height: "30px"
+# fir_bar: &first_bar
+#   height: "30px"
+#   position: "top"
+#   opacity: 1.0
+#   background: "#20242cc4"
+#   foreground: "#ffffff"
+#   font_family: "Segoe UI"
+#   font_size: "13px"
+#   padding: "4px 6px"
+#   offset_x: "10"
+#   offset_y: "10"
+#   border_radius: "0"
+#   components_center:
+#     - type: "window title"
+#   components_left:
+#     - type: "workspaces"
+#   components_right:
+#     - type: "tiling direction"
+#       label_horizontal: "⮂"
+#       label_vertical: "⮁"
+#       background: "#ffffff33"
+#       margin: "0 4px"
+#       padding: "0 8px"
+#     - type: "binding mode"
+#       background: "#ffffff33"
+#       margin: "0 4px 0 0"
+#       padding: "0 8px"
+#       
+#
+# sec_bar: &second_bar
+#   <<: *first_bar
+#   components_center:
+#     - type: "clock"
+#       # Documentation on formatting date/time string:
+#       # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
+#       time_formatting: "hh:mm tt  ddd MMM d"
+#   components_left:
+#     - type: "workspaces"
+#       focused_workspace_background: "#ffffff33"
+#       displayed_workspace_background: "#00000033"
+#       default_workspace_background: "transparent"
+#   components_right:
+#     - type: "system tray"
+#
+# bars:
+# ###################################################################################################
+#   - bind_to_monitor: 1
+#     <<: *first_bar
+#   - bind_to_monitor: 2
+#     <<: *second_bar
+horiz_bar: &horizontal_bar
+  height: "32px"
   position: "top"
   opacity: 1.0
   # background: *crust #"transparent" #*crust #"#20242cc4"
   foreground: *mauve #"#ffffff"
   background: "transparent"
-  font_family: "JetBrainsMonoNL Nerd Font" #"Segoe UI"
+  font_family: "JetBrainsMonoNL Nerd Font" #"Segoe UI""JetBrainsMonoNL Nerd Font"
   font_size: "12px"
   font_weight: "400"
   padding: "0px 6px"
@@ -130,33 +180,14 @@ bar:
   # padding: "5px"
   components_left:
 
-    # - type: "text"
-    #   text: ""
-    #   border_width: "0 0 0 3"
-    #   border_radius: "6"
-    #   margin: "0 5 0 0"
-    #   border_color: *crust
-    #   # border_color: *blue
-    #   # padding: "5 1 5 1"
-    #   background: *crust
-
     - type: "text"
       text: ""
       border_width: "5"
       border_radius: "5"
-      padding: "0 0 0 0"
+      padding: "0 2 0 0"
       background: *crust
       margin: "0 -7 0 0"
       border_color: *crust
-
-    # - type: "text"
-    #   text: ""
-    #   background: *crust
-    #   margin: "0px -15px 0px 6px"
-    #   padding: "0 10 0 10"
-    #   border_width: "8 0 8 0"
-    #   border_radius: "8"
-    #   border_color: *crust
 
     - type: "image"
       #change to your repo config path with the image
@@ -168,6 +199,7 @@ bar:
       border_radius: "6"
       padding: "3 4 3 4"
       border_color: *crust
+
     # making the border after the pacman img 
     - type: "text"
       text: ""
@@ -182,15 +214,14 @@ bar:
       displayed_workspace_background: "transparent" #*yellow # *surface0 #"#00000033"
       default_workspace_background: "transparent"
       background: *crust
-      padding: "0px 9px 0px 0px"
-      # padding: "2px 2px" # initial value
+      padding: "0px 4px 0px 0px"
       margin: "0 0 0 -5"
-      border_width: "2 0 2 0"
+      border_width: "5 0 5 0"
       border_radius: "5"
       border_color: *crust
       font_size: 16
-    # the right border for workspaces
 
+    # the right border for workspaces
     - type: "text"
       text: ""
       border_width: "5"
@@ -205,12 +236,12 @@ bar:
       border_width: "5"
       border_color: *crust
       border_radius: "5"
-      padding: "0 0 0 5"
+      padding: "0 5 0 5"
       background: *crust
       foreground: *blue
       label_not_playing: ""
-      label_paused: "󰓇 {song_title}  {artist_name} 󰏤 " #
-      label_playing: " {song_title}  {artist_name} "
+      label_paused: "<attr fs='16'>󰎊</attr> {song_title}  {artist_name} <attr fs='16'>󰎊</attr>" #󰓇
+      label_playing: "<attr fs='16'>󰎈</attr> {song_title}  {artist_name} <attr fs='16'>󰎈</attr>"
       max_title_length: 20
       max_artist_length: 20
 
@@ -225,34 +256,34 @@ bar:
       #       # Multiple attributes can be changed at once:
       #     label_charging: "{battery_level}% <attr ff='Arial' fg='#228B22' fw='400' fs='13px'>(charging)</attr>"
     - type: "memory"
-      label: "\ue266 {percent_usage}%"
+      label: "<attr fs='14'> </attr>{percent_usage}%" #\ue266
       refresh_interval_ms: 1000
       background: *crust
       foreground: *green
       margin: "0 3 0 3"
-      padding: "0 5 0 5"
-      border_color: *crust
       border_radius: "5"
+      border_color: *crust
       border_width: "5"
+      padding: "0 6 0 6"
 
     - type: "cpu"
-      label: " {percent_usage}%"
+      label: "<attr fs='14'> </attr>{percent_usage}%"
       refresh_interval_ms: 1000
       background: *crust
       foreground: *sapphire
       margin: "0 3 0 3"
-      padding: "0 5 0 5"
+      padding: "0 6 0 6"
       border_color: *crust
       border_radius: "5"
       border_width: "5"
 
     - type: "gpu"
-      label: "󰐿 {percent_usage}%" #testing
+      label: "<attr fs='16'>󱝊 </attr>{percent_usage}%" #testing󰐿
       refresh_interval_ms: 1000
       background: *crust
-      foreground: *sky
+      foreground: *lavender
       margin: "0 3 0 3"
-      padding: "0 5 0 5"
+      padding: "0 6 0 6"
       border_color: *crust
       border_radius: "5"
       border_width: "5"
@@ -279,8 +310,9 @@ bar:
       background: *crust
       font_weight: 600
       foreground: *mauve
+      font_size: 13
       margin: "0 5 0 5"
-      padding: "0 5 0 5"
+      padding: "0 6 0 6"
       border_color: *crust
       border_radius: "5"
       border_width: "5"
@@ -292,34 +324,51 @@ bar:
       label_collapse_text: " "
       background: *crust
       foreground: *crust
-      margin: "0 4 0 4"
+      margin: "0 3 0 3"
       padding: "0 7 0 0"
       border_color: *crust
       border_radius: "5"
       border_width: "5"
 
-
     - type: "battery"
-      label_draining: "󰂂 {battery_level}%"
-      label_power_saver: "󰂂 {battery_level}%"
-      label_charging: "󰂋 {battery_level}%"
+      label_draining: "<attr fs='16'>󰂂</attr> {battery_level}%"
+      label_power_saver: "<attr fs='16'>󰂂</attr> {battery_level}%"
+      label_charging: "<attr fs='16'>󰂋 </attr>{battery_level}%"
       background: *crust
       foreground: *teal
-      margin: "0 4 0 4"
-      padding: "0 5 0 5"
+      margin: "0 3 0 3"
+      padding: "0 7 0 6"
       border_color: *crust
       border_radius: "5"
       border_width: "5"
 
+    - type: "network"
+      label_no_internet: " "
+      label_ethernet: "󰈁"
+      label_wifi_strength_0: "󰤭 "
+      label_wifi_strength_25: "󰤟 "
+      label_wifi_strength_50: "󰤢 "
+      label_wifi_strength_75: "󰤥 "
+      label_wifi_strength_100: "󰤨 "
+      background: *crust
+      foreground: *subtext1
+      margin: "0 3 0 3" #-18 to fit with volume component
+      padding: "0 8 0 6"
+      border_color: *crust
+      border_radius: "5"
+      border_width: "5"
+      font_size: 20
+
+
     - type: "volume"
-      label_low: "🔊{volume_level}%"
-      label_medium: "🔊{volume_level}%"
-      label_high: "🔊{volume_level}%"
-      label_mute: "🔊{volume_level}%"
+      label_low: "<attr fs='16'>🔊</attr>{volume_level}%"
+      label_medium: "<attr fs='16'>🔊</attr>{volume_level}%"
+      label_high: "<attr fs='16'>🔊</attr>{volume_level}%"
+      label_mute: "<attr fs='16'>🔊</attr>{volume_level}%"
       background: *crust #"#ffffff33"
       foreground: *flamingo
-      margin: "0 4 0 4"
-      padding: "0 5 0 5"
+      margin: "0 3 0 3"
+      padding: "0 9 0 6"
       border_width: "5"
       border_radius: "5"
       border_color: *crust
@@ -336,12 +385,11 @@ bar:
     #   font_size: 20
     #   border_color: *crust
 
-
     - type: "binding mode"
       background: *crust #"#ffffff33"
       foreground: *red
-      margin: "0 4 0 4"
-      padding: "0 5 0 5"
+      margin: "0 3 0 3"
+      padding: "0 6 0 6"
       border_width: "5"
       font_weight: 900
       border_radius: "5"
@@ -351,20 +399,20 @@ bar:
       latitude: 49.238889
       longitude: -123.054167
       label: "{temperature_celsius}°C"
-      label_sun: "☀️ {temperature_celsius}°C"
-      label_moon: "🌙 {temperature_celsius}°C"
-      label_cloud_moon: "🌙☁️ {temperature_celsius}°C"
-      label_cloud_sun: "⛅ {temperature_celsius}°C"
-      label_cloud_moon_rain: "🌙🌧️ {temperature_celsius}°C"
-      label_cloud_sun_rain: "🌦️ {temperature_celsius}°C"
-      label_cloud_rain: "🌧️ {temperature_celsius}°C"
-      label_snow_flake: "❄️ {temperature_celsius}°C"
-      label_thunderstorm: "⚡ {temperature_celsius}°C"
-      label_cloud: "☁️ {temperature_celsius}°C"
+      label_sun: "<attr fs='14'>☀️ </attr>{temperature_celsius}°C"
+      label_moon: "<attr fs='14'>🌙 </attr>{temperature_celsius}°C"
+      label_cloud_moon: "<attr fs='14'>🌙☁️ </attr>{temperature_celsius}°C"
+      label_cloud_sun: "<attr fs='14'>⛅ </attr>{temperature_celsius}°C"
+      label_cloud_moon_rain: "<attr fs='14'>🌙🌧️ </attr>{temperature_celsius}°C"
+      label_cloud_sun_rain: "<attr fs='14'>🌦️ </attr>{temperature_celsius}°C"
+      label_cloud_rain: "<attr fs='14'>🌧️ </attr>{temperature_celsius}°C"
+      label_snow_flake: "<attr fs='14'>❄️ </attr>{temperature_celsius}°C"
+      label_thunderstorm: "<attr fs='14'>⚡ </attr>{temperature_celsius}°C"
+      label_cloud: "<attr fs='14'>☁️ </attr>{temperature_celsius}°C"
       background: *crust #"#ffffff33"
       foreground: *rosewater
-      margin: "0 4 0 4"
-      padding: "0 5 0 5"
+      margin: "0 3 0 3"
+      padding: "0 8 0 6"
       border_width: "5"
       border_radius: "5"
       border_color: *crust
@@ -377,52 +425,604 @@ bar:
         # time_formatting: "hh:mm tt  ddd/MMM/d"
       background: *crust
       foreground: *peach
-      margin: "0 4 0 4"
+      margin: "0 3 0 3"
+      padding: "0 6 0 6"
+      border_color: *crust
+      border_radius: "5"
+      border_width: "5"
+      font_size: 12
+
+    - type: "text"
+      text: ""
+      background: *crust
+      foreground: *red
+      margin: "0 3 0 3"
+      padding: "0 9 0 6"
+      font_size: 14
+      border_color: *crust
+      border_radius: "5"
+      border_width: "5"
+      # left_click_command: "exec C:\\Users\\Andrew Ng\\.glaze-wm\\shutdownTest"
+      left_click_command: "exec '%userprofile%/.glaze-wm/shutdownTest'"
+      right_click_command: ""
+
+vert_bar: &vertical_bar
+  << : *horizontal_bar
+  components_left:
+
+    - type: "text"
+      text: ""
+      border_width: "5"
+      border_radius: "5"
+      padding: "0 2 0 0"
+      background: *crust
+      margin: "0 -7 0 0"
+      border_color: *crust
+
+    - type: "image"
+      #change to your repo config path with the image
+      # source: "C:\\Users\\Andrew Ng\\.glaze-wm\\pacman.png"
+      # site: https://icons8.com/icons/set/pacman
+      source: "C:\\Users\\Andrew Ng\\.glaze-wm\\icons8-pacman-24.png"
+      background: *crust
+      border_width: "0 0 0 0"
+      border_radius: "6"
+      padding: "3 4 3 4"
+      border_color: *crust
+
+    # making the border after the pacman img 
+    - type: "text"
+      text: ""
+      background: *crust
+      margin: "0px -6px 0px -6px"
+      border_width: "2 0 2 0"
+      border_color: *crust
+
+    - type: "workspaces"
+      focused_workspace_background: "transparent" #"#ffffff33" # *mauve
+      focused_workspace_foreground: "#3fe86c" # *crust #red
+      displayed_workspace_background: "transparent" #*yellow # *surface0 #"#00000033"
+      default_workspace_background: "transparent"
+      background: *crust
+      padding: "0px 4px 0px 0px"
+      margin: "0 0 0 -5"
+      border_width: "5 0 5 0"
+      border_radius: "5"
+      border_color: *crust
+      font_size: 16
+
+    # the right border for workspaces
+    - type: "text"
+      text: ""
+      border_width: "5"
+      border_radius: "5"
+      padding: "0 0 0 0"
+      background: *crust
+      margin: "0 0 0 -7"
+      border_color: *crust
+
+    - type: "music"
+      margin: "0 3 0 7"
+      border_width: "5"
+      border_color: *crust
+      border_radius: "5"
       padding: "0 5 0 5"
+      background: *crust
+      foreground: *blue
+      label_not_playing: ""
+      label_paused: "<attr fs='16'>󰎊</attr> {song_title}  {artist_name} <attr fs='16'>󰎊</attr>" #󰓇
+      label_playing: "<attr fs='16'>󰎈</attr> {song_title}  {artist_name} <attr fs='16'>󰎈</attr>"
+      max_title_length: 20
+      max_artist_length: 20
+
+      # components_left:
+      #   - type: "cpu"
+      #     # Change font family (ie. ff) to Comic Sans for part of the label:
+      #     label: "<attr ff='Comic Sans'>CPU:</attr> {percent_usage}%"
+      #
+      #   - type: "battery"
+      #     # Show an icon by using an icon font:
+      #     label_draining: "<attr ff='Material Icons'></attr> {battery_level}%"
+      #       # Multiple attributes can be changed at once:
+      #     label_charging: "{battery_level}% <attr ff='Arial' fg='#228B22' fw='400' fs='13px'>(charging)</attr>"
+    # - type: "memory"
+    #   label: "<attr fs='14'> </attr>{percent_usage}%" #\ue266
+    #   refresh_interval_ms: 1000
+    #   background: *crust
+    #   foreground: *green
+    #   margin: "0 3 0 3"
+    #   border_radius: "5"
+    #   border_color: *crust
+    #   border_width: "5"
+    #   padding: "0 6 0 6"
+    #
+    # - type: "cpu"
+    #   label: "<attr fs='14'> </attr>{percent_usage}%"
+    #   refresh_interval_ms: 1000
+    #   background: *crust
+    #   foreground: *sapphire
+    #   margin: "0 3 0 3"
+    #   padding: "0 6 0 6"
+    #   border_color: *crust
+    #   border_radius: "5"
+    #   border_width: "5"
+    #
+    # - type: "gpu"
+    #   label: "<attr fs='16'>󱝊 </attr>{percent_usage}%" #testing󰐿
+    #   refresh_interval_ms: 1000
+    #   background: *crust
+    #   foreground: *lavender
+    #   margin: "0 3 0 3"
+    #   padding: "0 6 0 6"
+    #   border_color: *crust
+    #   border_radius: "5"
+    #   border_width: "5"
+
+
+
+  components_center:
+    - type: "clock"
+        # Documentation on formatting date/time string:
+        # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
+      time_formatting: " hh:mm tt"
+        # time_formatting: "hh:mm tt  ddd/MMM/d"
+        # - type: "text"
+        #   text: "󰍹 "
+        #   # text: " 󰌢  󰍹 "
+        #   font_size: "18"
+        # - type: "window title"
+        #   foreground: *green
+        #   padding: "0 1px"
+        #   background: *blue
+        #   border_width: "4"
+        #   border_radius: "10"
+        #   border_color: *blue
+      background: *crust
+      font_weight: 600
+      foreground: *mauve
+      font_size: 13
+      margin: "0 5 0 5"
+      padding: "0 6 0 6"
       border_color: *crust
       border_radius: "5"
       border_width: "5"
 
-workspaces:
+  components_right:
+
+    # - type: "system tray"
+    #   label_expand_text:  " " #
+    #   label_collapse_text: " "
+    #   background: *crust
+    #   foreground: *crust
+    #   margin: "0 3 0 3"
+    #   padding: "0 7 0 0"
+    #   border_color: *crust
+    #   border_radius: "5"
+    #   border_width: "5"
+
+    - type: "battery"
+      label_draining: "<attr fs='16'>󰂂</attr> {battery_level}%"
+      label_power_saver: "<attr fs='16'>󰂂</attr> {battery_level}%"
+      label_charging: "<attr fs='16'>󰂋 </attr>{battery_level}%"
+      background: *crust
+      foreground: *teal
+      margin: "0 3 0 3"
+      padding: "0 7 0 6"
+      border_color: *crust
+      border_radius: "5"
+      border_width: "5"
+
+    - type: "network"
+      label_no_internet: " "
+      label_ethernet: "󰈁"
+      label_wifi_strength_0: "󰤭 "
+      label_wifi_strength_25: "󰤟 "
+      label_wifi_strength_50: "󰤢 "
+      label_wifi_strength_75: "󰤥 "
+      label_wifi_strength_100: "󰤨 "
+      background: *crust
+      foreground: *subtext1
+      margin: "0 3 0 3" #-18 to fit with volume component
+      padding: "0 8 0 6"
+      border_color: *crust
+      border_radius: "5"
+      border_width: "5"
+      font_size: 20
+
+
+    - type: "volume"
+      label_low: "<attr fs='16'>🔊</attr>{volume_level}%"
+      label_medium: "<attr fs='16'>🔊</attr>{volume_level}%"
+      label_high: "<attr fs='16'>🔊</attr>{volume_level}%"
+      label_mute: "<attr fs='16'>🔊</attr>{volume_level}%"
+      background: *crust #"#ffffff33"
+      foreground: *flamingo
+      margin: "0 3 0 3"
+      padding: "0 9 0 6"
+      border_width: "5"
+      border_radius: "5"
+      border_color: *crust
+
+    # - type: "tiling direction"
+    #   label_horizontal: "󰚉" #⮂
+    #   label_vertical: "󰚈" #⮁
+    #   background: *crust #"#ffffff33"
+    #   foreground: *flamingo
+    #   margin: "0 5 0 5"
+    #   padding: "0 5 0 5"
+    #   border_width: "5"
+    #   border_radius: "5"
+    #   font_size: 20
+    #   border_color: *crust
+
+    - type: "binding mode"
+      background: *crust #"#ffffff33"
+      foreground: *red
+      margin: "0 3 0 3"
+      padding: "0 6 0 6"
+      border_width: "5"
+      font_weight: 900
+      border_radius: "5"
+      border_color: *crust
+
+    - type: "weather"
+      latitude: 49.238889
+      longitude: -123.054167
+      label: "{temperature_celsius}°C"
+      label_sun: "<attr fs='14'>☀️ </attr>{temperature_celsius}°C"
+      label_moon: "<attr fs='14'>🌙 </attr>{temperature_celsius}°C"
+      label_cloud_moon: "<attr fs='14'>🌙☁️ </attr>{temperature_celsius}°C"
+      label_cloud_sun: "<attr fs='14'>⛅ </attr>{temperature_celsius}°C"
+      label_cloud_moon_rain: "<attr fs='14'>🌙🌧️ </attr>{temperature_celsius}°C"
+      label_cloud_sun_rain: "<attr fs='14'>🌦️ </attr>{temperature_celsius}°C"
+      label_cloud_rain: "<attr fs='14'>🌧️ </attr>{temperature_celsius}°C"
+      label_snow_flake: "<attr fs='14'>❄️ </attr>{temperature_celsius}°C"
+      label_thunderstorm: "<attr fs='14'>⚡ </attr>{temperature_celsius}°C"
+      label_cloud: "<attr fs='14'>☁️ </attr>{temperature_celsius}°C"
+      background: *crust #"#ffffff33"
+      foreground: *rosewater
+      margin: "0 3 0 3"
+      padding: "0 8 0 6"
+      border_width: "5"
+      border_radius: "5"
+      border_color: *crust
+
+    - type: "clock"
+      padding: "0 3px"
+      # Documentation on formatting date/time string:
+      # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
+      time_formatting: "󰃵 MM/dd/yyyy"
+        # time_formatting: "hh:mm tt  ddd/MMM/d"
+      background: *crust
+      foreground: *peach
+      margin: "0 3 0 3"
+      padding: "0 6 0 6"
+      border_color: *crust
+      border_radius: "5"
+      border_width: "5"
+      font_size: 12
+
+    - type: "text"
+      text: ""
+      background: *crust
+      foreground: *red
+      margin: "0 3 0 3"
+      padding: "0 9 0 6"
+      font_size: 14
+      border_color: *crust
+      border_radius: "5"
+      border_width: "5"
+      left_click_command: ""
+      right_click_command: ""
+
+bars:
+  - bind_to_monitor: 1
+    <<: *horizontal_bar
+  - bind_to_monitor: 2
+    <<: *vertical_bar
+# bar:
+#   height: "32px"
+#   position: "top"
+#   opacity: 1.0
+#   # background: *crust #"transparent" #*crust #"#20242cc4"
+#   foreground: *mauve #"#ffffff"
+#   background: "transparent"
+#   font_family: "JetBrainsMonoNL Nerd Font" #"Segoe UI""JetBrainsMonoNL Nerd Font"
+#   font_size: "12px"
+#   font_weight: "400"
+#   padding: "0px 6px"
+#   offset_x: "9"
+#   offset_y: "5"
+#   # border_radius: "6"
+#   # border_width: "1"
+#   # border_color: *lavender
+#   # padding: "5px"
+#   components_left:
+#
+#     - type: "text"
+#       text: ""
+#       border_width: "5"
+#       border_radius: "5"
+#       padding: "0 2 0 0"
+#       background: *crust
+#       margin: "0 -7 0 0"
+#       border_color: *crust
+#
+#     - type: "image"
+#       #change to your repo config path with the image
+#       # source: "C:\\Users\\Andrew Ng\\.glaze-wm\\pacman.png"
+#       # site: https://icons8.com/icons/set/pacman
+#       source: "C:\\Users\\Andrew Ng\\.glaze-wm\\icons8-pacman-24.png"
+#       background: *crust
+#       border_width: "0 0 0 0"
+#       border_radius: "6"
+#       padding: "3 4 3 4"
+#       border_color: *crust
+#
+#     # making the border after the pacman img 
+#     - type: "text"
+#       text: ""
+#       background: *crust
+#       margin: "0px -6px 0px -6px"
+#       border_width: "2 0 2 0"
+#       border_color: *crust
+#
+#     - type: "workspaces"
+#       focused_workspace_background: "transparent" #"#ffffff33" # *mauve
+#       focused_workspace_foreground: "#3fe86c" # *crust #red
+#       displayed_workspace_background: "transparent" #*yellow # *surface0 #"#00000033"
+#       default_workspace_background: "transparent"
+#       background: *crust
+#       padding: "0px 4px 0px 0px"
+#       margin: "0 0 0 -5"
+#       border_width: "5 0 5 0"
+#       border_radius: "5"
+#       border_color: *crust
+#       font_size: 16
+#
+#     # the right border for workspaces
+#     - type: "text"
+#       text: ""
+#       border_width: "5"
+#       border_radius: "5"
+#       padding: "0 0 0 0"
+#       background: *crust
+#       margin: "0 0 0 -7"
+#       border_color: *crust
+#
+#     - type: "music"
+#       margin: "0 3 0 7"
+#       border_width: "5"
+#       border_color: *crust
+#       border_radius: "5"
+#       padding: "0 5 0 5"
+#       background: *crust
+#       foreground: *blue
+#       label_not_playing: ""
+#       label_paused: "<attr fs='16'>󰎊</attr> {song_title}  {artist_name} <attr fs='16'>󰎊</attr>" #󰓇
+#       label_playing: "<attr fs='16'>󰎈</attr> {song_title}  {artist_name} <attr fs='16'>󰎈</attr>"
+#       max_title_length: 20
+#       max_artist_length: 20
+#
+#       # components_left:
+#       #   - type: "cpu"
+#       #     # Change font family (ie. ff) to Comic Sans for part of the label:
+#       #     label: "<attr ff='Comic Sans'>CPU:</attr> {percent_usage}%"
+#       #
+#       #   - type: "battery"
+#       #     # Show an icon by using an icon font:
+#       #     label_draining: "<attr ff='Material Icons'></attr> {battery_level}%"
+#       #       # Multiple attributes can be changed at once:
+#       #     label_charging: "{battery_level}% <attr ff='Arial' fg='#228B22' fw='400' fs='13px'>(charging)</attr>"
+#     - type: "memory"
+#       label: "<attr fs='14'> </attr>{percent_usage}%" #\ue266
+#       refresh_interval_ms: 1000
+#       background: *crust
+#       foreground: *green
+#       margin: "0 3 0 3"
+#       border_radius: "5"
+#       border_color: *crust
+#       border_width: "5"
+#       padding: "0 6 0 6"
+#
+#     - type: "cpu"
+#       label: "<attr fs='14'> </attr>{percent_usage}%"
+#       refresh_interval_ms: 1000
+#       background: *crust
+#       foreground: *sapphire
+#       margin: "0 3 0 3"
+#       padding: "0 6 0 6"
+#       border_color: *crust
+#       border_radius: "5"
+#       border_width: "5"
+#
+#     - type: "gpu"
+#       label: "<attr fs='16'>󱝊 </attr>{percent_usage}%" #testing󰐿
+#       refresh_interval_ms: 1000
+#       background: *crust
+#       foreground: *lavender
+#       margin: "0 3 0 3"
+#       padding: "0 6 0 6"
+#       border_color: *crust
+#       border_radius: "5"
+#       border_width: "5"
+#
+#
+#
+#   components_center:
+#     - type: "clock"
+#         # Documentation on formatting date/time string:
+#         # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
+#       time_formatting: " hh:mm tt"
+#         # time_formatting: "hh:mm tt  ddd/MMM/d"
+#         # - type: "text"
+#         #   text: "󰍹 "
+#         #   # text: " 󰌢  󰍹 "
+#         #   font_size: "18"
+#         # - type: "window title"
+#         #   foreground: *green
+#         #   padding: "0 1px"
+#         #   background: *blue
+#         #   border_width: "4"
+#         #   border_radius: "10"
+#         #   border_color: *blue
+#       background: *crust
+#       font_weight: 600
+#       foreground: *mauve
+#       font_size: 13
+#       margin: "0 5 0 5"
+#       padding: "0 6 0 6"
+#       border_color: *crust
+#       border_radius: "5"
+#       border_width: "5"
+#
+#   components_right:
+#
+#     - type: "system tray"
+#       label_expand_text:  " " #
+#       label_collapse_text: " "
+#       background: *crust
+#       foreground: *crust
+#       margin: "0 3 0 3"
+#       padding: "0 7 0 0"
+#       border_color: *crust
+#       border_radius: "5"
+#       border_width: "5"
+#
+#     - type: "battery"
+#       label_draining: "<attr fs='16'>󰂂</attr> {battery_level}%"
+#       label_power_saver: "<attr fs='16'>󰂂</attr> {battery_level}%"
+#       label_charging: "<attr fs='16'>󰂋 </attr>{battery_level}%"
+#       background: *crust
+#       foreground: *teal
+#       margin: "0 3 0 3"
+#       padding: "0 7 0 6"
+#       border_color: *crust
+#       border_radius: "5"
+#       border_width: "5"
+#
+#     - type: "network"
+#       label_no_internet: " "
+#       label_ethernet: "󰈁"
+#       label_wifi_strength_0: "󰤭 "
+#       label_wifi_strength_25: "󰤟 "
+#       label_wifi_strength_50: "󰤢 "
+#       label_wifi_strength_75: "󰤥 "
+#       label_wifi_strength_100: "󰤨 "
+#       background: *crust
+#       foreground: *subtext1
+#       margin: "0 3 0 3" #-18 to fit with volume component
+#       padding: "0 8 0 6"
+#       border_color: *crust
+#       border_radius: "5"
+#       border_width: "5"
+#       font_size: 20
+#
+#
+#     - type: "volume"
+#       label_low: "<attr fs='16'>🔊</attr>{volume_level}%"
+#       label_medium: "<attr fs='16'>🔊</attr>{volume_level}%"
+#       label_high: "<attr fs='16'>🔊</attr>{volume_level}%"
+#       label_mute: "<attr fs='16'>🔊</attr>{volume_level}%"
+#       background: *crust #"#ffffff33"
+#       foreground: *flamingo
+#       margin: "0 3 0 3"
+#       padding: "0 9 0 6"
+#       border_width: "5"
+#       border_radius: "5"
+#       border_color: *crust
+#
+#     # - type: "tiling direction"
+#     #   label_horizontal: "󰚉" #⮂
+#     #   label_vertical: "󰚈" #⮁
+#     #   background: *crust #"#ffffff33"
+#     #   foreground: *flamingo
+#     #   margin: "0 5 0 5"
+#     #   padding: "0 5 0 5"
+#     #   border_width: "5"
+#     #   border_radius: "5"
+#     #   font_size: 20
+#     #   border_color: *crust
+#
+#     - type: "binding mode"
+#       background: *crust #"#ffffff33"
+#       foreground: *red
+#       margin: "0 3 0 3"
+#       padding: "0 6 0 6"
+#       border_width: "5"
+#       font_weight: 900
+#       border_radius: "5"
+#       border_color: *crust
+#
+#     - type: "weather"
+#       latitude: 49.238889
+#       longitude: -123.054167
+#       label: "{temperature_celsius}°C"
+#       label_sun: "<attr fs='14'>☀️ </attr>{temperature_celsius}°C"
+#       label_moon: "<attr fs='14'>🌙 </attr>{temperature_celsius}°C"
+#       label_cloud_moon: "<attr fs='14'>🌙☁️ </attr>{temperature_celsius}°C"
+#       label_cloud_sun: "<attr fs='14'>⛅ </attr>{temperature_celsius}°C"
+#       label_cloud_moon_rain: "<attr fs='14'>🌙🌧️ </attr>{temperature_celsius}°C"
+#       label_cloud_sun_rain: "<attr fs='14'>🌦️ </attr>{temperature_celsius}°C"
+#       label_cloud_rain: "<attr fs='14'>🌧️ </attr>{temperature_celsius}°C"
+#       label_snow_flake: "<attr fs='14'>❄️ </attr>{temperature_celsius}°C"
+#       label_thunderstorm: "<attr fs='14'>⚡ </attr>{temperature_celsius}°C"
+#       label_cloud: "<attr fs='14'>☁️ </attr>{temperature_celsius}°C"
+#       background: *crust #"#ffffff33"
+#       foreground: *rosewater
+#       margin: "0 3 0 3"
+#       padding: "0 8 0 6"
+#       border_width: "5"
+#       border_radius: "5"
+#       border_color: *crust
+#
+#     - type: "clock"
+#       padding: "0 3px"
+#       # Documentation on formatting date/time string:
+#       # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
+#       time_formatting: "󰃵 MM/dd/yyyy"
+#         # time_formatting: "hh:mm tt  ddd/MMM/d"
+#       background: *crust
+#       foreground: *peach
+#       margin: "0 3 0 3"
+#       padding: "0 6 0 6"
+#       border_color: *crust
+#       border_radius: "5"
+#       border_width: "5"
+#       font_size: 12
+#
+#     - type: "text"
+#       text: ""
+#       background: *crust
+#       foreground: *red
+#       margin: "0 3 0 3"
+#       padding: "0 9 0 6"
+#       font_size: 14
+#       border_color: *crust
+#       border_radius: "5"
+#       border_width: "5"
+
+workspaces: #possible icons - " "
   # not monitor 1 = horizontal monitor and not the vertical monitor despite the settings identifying otherwise
   - name: "1"
-    # display_name: "1 Main"
-    # display_name: "" # possible icons for workspace
     display_name: ""
     bind_to_monitor: 1
   - name: "2"
-    # display_name: ""
-    # display_name: ""
     display_name: ""
-    # display_name: "2 Discord"
     bind_to_monitor: 1
   - name: "3"
-    # display_name: ""
-    # display_name: ""
     display_name: ""
   - name: "4"
-    # display_name: ""
-    # display_name: ""
     display_name: ""
   - name: "5"
-    # display_name: ""
-    # display_name: ""
     display_name: ""
   - name: "6"
-    # display_name: ""
-    # display_name: ""
     display_name: ""
   - name: "7"
-    # display_name: ""
-    # display_name: ""
     display_name: ""
   - name: "8"
-    # display_name: ""
-    # display_name: ""
     display_name: ""
   - name: "9"
-    # display_name: ""
-    # display_name: ""
     display_name: ""
     bind_to_monitor: 2
 
@@ -459,8 +1059,11 @@ window_rules:
   - command: "ignore"
     match_process_name: "Flow.Launcher"
 
-  # - command: "set floating"
-  #   match_class_name: "HwndWrapper[Flow.Launcher;;ac113fc7-33c5-46a9-a3ad-cf92e82b2b4e"
+  # ignore picture in picture in chromium/chrome(not test) browsers such as operagx
+  - command: "ignore"
+    match_title: "[Pp]icture.in.[Pp]icture"
+    match_class_name: "Chrome_WidgetWin_1" 
+
   #claculator
   - command: "set floating"
     match_class_name: "ApplicationFrameWindow"
