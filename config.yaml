@@ -127,19 +127,70 @@ horiz_bar: &horizontal_bar
       margin: "0 0 0 -7"
       border_color: *crust
 
-    - type: "music"
-      margin: "0 3 0 7"
-      border_width: "5"
-      border_color: *crust
+    # - type: "music"
+    #   margin: "0 3 0 7"
+    #   border_width: "5"
+    #   border_color: *crust
+    #   border_radius: "5"
+    #   padding: "0 5 0 5"
+    #   background: *crust
+    #   foreground: *blue
+    #   label_not_playing: ""
+    #   label_paused: "<attr fs='16'>󰎊</attr> {song_title}  {artist_name} <attr fs='16'>󰎊</attr>" #󰓇
+    #   label_playing: "<attr fs='16'>󰎈</attr> {song_title}  {artist_name} <attr fs='16'>󰎈</attr>"
+    #   max_title_length: 20
+    #   max_artist_length: 20
+
+    - type: text file # Play/pause icon
+      file_path: "C:/Users/Andrew Ng/.glaze-wm/scripts/song_playing.txt"
+      font_size: 16
+      padding: 0 6 0 4
+      margin: "0 0 0 7"
+      font_family: "JetBrainsMonoNL Nerd Font"
       border_radius: "5"
-      padding: "0 5 0 5"
+      border_width: "0 0 0 5"
+      background: *crust
+      border_color: *crust
+      foreground: *blue
+
+    - type: text file # Song title underlined section
+      file_path: "C:/Users/Andrew Ng/.glaze-wm/scripts/song_info_1.txt"
+      padding: 3 1 0 0
+      margin: 0 0 0 0
+      background: *crust
+      font_family: "JetBrainsMonoNL Nerd Font"
+      foreground: *blue
+      border_width: 0 0 2 0
+      border_color: *blue
+
+    - type: text file # Song title non-underlined section
+      file_path: "C:/Users/Andrew Ng/.glaze-wm/scripts/song_info_2.txt"
+      padding: 3 1 0 0
+      margin: 0 0 0 0
       background: *crust
       foreground: *blue
-      label_not_playing: ""
-      label_paused: "<attr fs='16'>󰎊</attr> {song_title}  {artist_name} <attr fs='16'>󰎊</attr>" #󰓇
-      label_playing: "<attr fs='16'>󰎈</attr> {song_title}  {artist_name} <attr fs='16'>󰎈</attr>"
-      max_title_length: 20
-      max_artist_length: 20
+      font_family: "JetBrainsMonoNL Nerd Font"
+      border_width: 0 0 2 0
+      border_color: *crust
+
+    - type: text file # Play/pause icon
+      file_path: "C:/Users/Andrew Ng/.glaze-wm/scripts/song_playing.txt"
+      font_size: 16
+      font_family: "JetBrainsMonoNL Nerd Font"
+      padding: 0 4 0 7
+      border_width: "0 5 0 0"
+      border_radius: "5"
+      margin: "0 3 0 -1"
+      background: *crust
+      foreground: *blue
+      border_color: *crust
+
+    - type: text # Play/pause clickable area
+      text: "   "
+      margin: 0 0 0 -42
+      background: "transparent"
+      # left_click_command: "exec pythonw C:\\Users\\'Andrew Ng'\\.glaze-wm\\scripts\\toggle_pause.py"
+      left_click_command: "exec '%userprofile%/.glaze-wm/scripts/toggle_pause'"
 
     - type: "memory"
       label: "<attr fs='14'> </attr>{percent_usage}%" #\ue266
@@ -311,8 +362,15 @@ horiz_bar: &horizontal_bar
       border_radius: "5"
       border_width: "5"
       # left_click_command: "exec C:\\Users\\Andrew Ng\\.glaze-wm\\shutdownTest"
-      left_click_command: "exec '%userprofile%/.glaze-wm/shutdownPC'"
+      # left_click_command: "exec '%userprofile%/.glaze-wm/shutdownPC'"
       right_click_command: ""
+
+    - type: "text"
+      text: "   "
+      background: "transparent"
+      font_size: 20
+      margin: "0 0 0 -35"
+      left_click_command: "exec '%userprofile%/.glaze-wm/shutdownPC'"
 
 vert_bar: &vertical_bar
   << : *horizontal_bar
@@ -369,19 +427,70 @@ vert_bar: &vertical_bar
       margin: "0 0 0 -7"
       border_color: *crust
 
-    - type: "music"
-      margin: "0 3 0 7"
-      border_width: "5"
-      border_color: *crust
+    # - type: "music"
+    #   margin: "0 3 0 7"
+    #   border_width: "5"
+    #   border_color: *crust
+    #   border_radius: "5"
+    #   padding: "0 5 0 5"
+    #   background: *crust
+    #   foreground: *blue
+    #   label_not_playing: ""
+    #   label_paused: "<attr fs='16'>󰎊</attr> {song_title}  {artist_name} <attr fs='16'>󰎊</attr>" #󰓇
+    #   label_playing: "<attr fs='16'>󰎈</attr> {song_title}  {artist_name} <attr fs='16'>󰎈</attr>"
+    #   max_title_length: 20
+    #   max_artist_length: 20
+
+    - type: text file # Play/pause icon
+      file_path: "C:/Users/Andrew Ng/.glaze-wm/scripts/song_playing.txt"
+      font_size: 16
+      padding: 0 6 0 4
+      margin: "0 0 0 7"
       border_radius: "5"
-      padding: "0 5 0 5"
+      border_width: "0 0 0 5"
+      font_family: "JetBrainsMonoNL Nerd Font"
+      background: *crust
+      border_color: *crust
+      foreground: *blue
+
+    - type: text file # Song title underlined section
+      file_path: "C:/Users/Andrew Ng/.glaze-wm/scripts/song_info_1.txt"
+      padding: 3 1 0 0
+      margin: 0 0 0 0
+      background: *crust
+      font_family: "JetBrainsMonoNL Nerd Font"
+      foreground: *blue
+      border_width: 0 0 2 0
+      border_color: *blue
+
+    - type: text file # Song title non-underlined section
+      file_path: "C:/Users/Andrew Ng/.glaze-wm/scripts/song_info_2.txt"
+      padding: 3 1 0 0
+      margin: 0 0 0 0
       background: *crust
       foreground: *blue
-      label_not_playing: ""
-      label_paused: "<attr fs='16'>󰎊</attr> {song_title}  {artist_name} <attr fs='16'>󰎊</attr>" #󰓇
-      label_playing: "<attr fs='16'>󰎈</attr> {song_title}  {artist_name} <attr fs='16'>󰎈</attr>"
-      max_title_length: 20
-      max_artist_length: 20
+      font_family: "JetBrainsMonoNL Nerd Font"
+      border_width: 0 0 2 0
+      border_color: *crust
+
+    - type: text file # Play/pause icon
+      file_path: "C:/Users/Andrew Ng/.glaze-wm/scripts/song_playing.txt"
+      font_size: 16
+      padding: 0 4 0 7
+      border_width: "0 5 0 0"
+      border_radius: "5"
+      font_family: "JetBrainsMonoNL Nerd Font"
+      margin: "0 3 0 -1"
+      background: *crust
+      foreground: *blue
+      border_color: *crust
+
+    - type: text # Play/pause clickable area
+      text: "   "
+      margin: 0 0 0 -42
+      background: "transparent"
+      # left_click_command: "exec pythonw C:\\Users\\'Andrew Ng'\\.glaze-wm\\scripts\\toggle_pause.py"
+      left_click_command: "exec '%userprofile%/.glaze-wm/scripts/toggle_pause'"
 
     # - type: "memory"
     #   label: "<attr fs='14'> </attr>{percent_usage}%" #\ue266
@@ -554,8 +663,14 @@ vert_bar: &vertical_bar
       border_color: *crust
       border_radius: "5"
       border_width: "5"
-      left_click_command: "exec '%userprofile%/.glaze-wm/shutdownPC'"
       right_click_command: ""
+
+    - type: "text"
+      text: "   "
+      background: "transparent"
+      font_size: 20
+      margin: "0 0 0 -35"
+      left_click_command: "exec '%userprofile%/.glaze-wm/shutdownPC'"
 
 bars:
   - bind_to_monitor: 1
