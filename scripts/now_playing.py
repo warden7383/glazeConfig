@@ -39,7 +39,8 @@ async def get_song_info(session):
         return media_str_1, media_str_2, Buffer(0), playing
 
     # Nothing is playing
-    return "¯\\_(ツ)_/¯", "", Buffer(0), False
+    # return "¯\\_(ツ)_/¯", "", Buffer(0), False
+    return "No Song Playing", "", Buffer(0), False
 
 if __name__ == "__main__":
     try:

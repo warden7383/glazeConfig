@@ -370,7 +370,7 @@ horiz_bar: &horizontal_bar
       background: "transparent"
       font_size: 20
       margin: "0 0 0 -35"
-      left_click_command: "exec '%userprofile%/.glaze-wm/shutdownPC'"
+      left_click_command: "exec '%userprofile%/.glaze-wm/scripts/shutdownPC'"
 
 vert_bar: &vertical_bar
   << : *horizontal_bar
@@ -670,7 +670,7 @@ vert_bar: &vertical_bar
       background: "transparent"
       font_size: 20
       margin: "0 0 0 -35"
-      left_click_command: "exec '%userprofile%/.glaze-wm/shutdownPC'"
+      left_click_command: "exec '%userprofile%/.glaze-wm/scripts/shutdownPC'"
 
 bars:
   - bind_to_monitor: 1
