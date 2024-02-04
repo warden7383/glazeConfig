@@ -29,78 +29,28 @@ crust: &crust "#24283b" #181926"
 general:
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: false
-
   # Whether to jump the cursor between windows focused by the WM.
   cursor_follow_focus: false
-
   # Whether to switch back and forth between the previously focused workspace
   # when focusing the current workspace.
   toggle_workspace_on_refocus: true
-
   # Whether to show floating windows as always on top.
   show_floating_on_top: false
-
   # Amount to move floating windows by (eg. when using `alt+<hjkl>` on a floating window)
   floating_window_move_amount: "5%"
-
   # *Strongly* recommended to set to 'false'. Whether to globally enable/disable
   # window transition animations (on minimize, close, etc). Set to 'unchanged'
   # to make no setting changes.
   window_animations: "false"
-
-  # Whether to center new floating windows (default is true)
-  center_new_floating_windows: false
-
-gaps:
-  # Gap between adjacent windows.
-  inner_gap: "10px"
-
-  # Gap between windows and the screen edge.
-  outer_gap: "9px 10px 10px 10px"
-
-# Highlight active/inactive windows with a colored border.
-# ** Exclusive to Windows 11 due to API limitations.
-focus_borders:
-  active:
-    enabled: true
-    color: *lavender #"#0000ff"
-
-  inactive:
-    enabled: false
-    color: "#ff0000"
-
-general:
-  # Whether to automatically focus windows underneath the cursor.
-  focus_follows_cursor: false
-
-  # Whether to jump the cursor between windows focused by the WM.
-  cursor_follow_focus: false
-
-  # Whether to switch back and forth between the previously focused workspace
-  # when focusing the current workspace.
-  toggle_workspace_on_refocus: true
-
-  # Whether to show floating windows as always on top.
-  show_floating_on_top: false
-
-  # Amount to move floating windows by (eg. when using `alt+<hjkl>` on a floating window)
-  floating_window_move_amount: "5%"
-
-  # *Strongly* recommended to set to 'false'. Whether to globally enable/disable
-  # window transition animations (on minimize, close, etc). Set to 'unchanged'
-  # to make no setting changes.
-  window_animations: "false"
-
    # Whether to center new floating windows (default is true)
   center_new_floating_windows: false
 
 gaps:
   # Gap between adjacent windows.
   inner_gap: "10px"
-
   # Gap between windows and the screen edge.
-  outer_gap: "10px"
-
+  # outer_gap: "10px"
+  outer_gap: "9px 10px 10px 10px"
 # Highlight active/inactive windows with a colored border.
 # ** Exclusive to Windows 11 due to API limitations.
 focus_borders:
@@ -111,73 +61,19 @@ focus_borders:
     enabled: false
     color: "#ff0000"
 
-# fir_bar: &first_bar
-#   height: "30px"
-#   position: "top"
-#   opacity: 1.0
-#   background: "#20242cc4"
-#   foreground: "#ffffff"
-#   font_family: "Segoe UI"
-#   font_size: "13px"
-#   padding: "4px 6px"
-#   offset_x: "10"
-#   offset_y: "10"
-#   border_radius: "0"
-#   components_center:
-#     - type: "window title"
-#   components_left:
-#     - type: "workspaces"
-#   components_right:
-#     - type: "tiling direction"
-#       label_horizontal: "⮂"
-#       label_vertical: "⮁"
-#       background: "#ffffff33"
-#       margin: "0 4px"
-#       padding: "0 8px"
-#     - type: "binding mode"
-#       background: "#ffffff33"
-#       margin: "0 4px 0 0"
-#       padding: "0 8px"
-#       
-#
-# sec_bar: &second_bar
-#   <<: *first_bar
-#   components_center:
-#     - type: "clock"
-#       # Documentation on formatting date/time string:
-#       # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
-#       time_formatting: "hh:mm tt  ddd MMM d"
-#   components_left:
-#     - type: "workspaces"
-#       focused_workspace_background: "#ffffff33"
-#       displayed_workspace_background: "#00000033"
-#       default_workspace_background: "transparent"
-#   components_right:
-#     - type: "system tray"
-#
-# bars:
-# ###################################################################################################
-#   - bind_to_monitor: 1
-#     <<: *first_bar
-#   - bind_to_monitor: 2
-#     <<: *second_bar
 horiz_bar: &horizontal_bar
   height: "32px"
   position: "top"
   opacity: 1.0
-  # background: *crust #"transparent" #*crust #"#20242cc4"
   foreground: *mauve #"#ffffff"
-  background: "transparent"
+  background: "transparent"  # background: *crust #"transparent" #*crust #"#20242cc4"
   font_family: "JetBrainsMonoNL Nerd Font" #"Segoe UI""JetBrainsMonoNL Nerd Font"
   font_size: "12px"
   font_weight: "400"
   padding: "0px 6px"
   offset_x: "9"
   offset_y: "5"
-  # border_radius: "6"
-  # border_width: "1"
-  # border_color: *lavender
-  # padding: "5px"
+
   components_left:
 
     - type: "text"
@@ -245,16 +141,6 @@ horiz_bar: &horizontal_bar
       max_title_length: 20
       max_artist_length: 20
 
-      # components_left:
-      #   - type: "cpu"
-      #     # Change font family (ie. ff) to Comic Sans for part of the label:
-      #     label: "<attr ff='Comic Sans'>CPU:</attr> {percent_usage}%"
-      #
-      #   - type: "battery"
-      #     # Show an icon by using an icon font:
-      #     label_draining: "<attr ff='Material Icons'></attr> {battery_level}%"
-      #       # Multiple attributes can be changed at once:
-      #     label_charging: "{battery_level}% <attr ff='Arial' fg='#228B22' fw='400' fs='13px'>(charging)</attr>"
     - type: "memory"
       label: "<attr fs='14'> </attr>{percent_usage}%" #\ue266
       refresh_interval_ms: 1000
@@ -288,34 +174,19 @@ horiz_bar: &horizontal_bar
       border_radius: "5"
       border_width: "5"
 
-
-
   components_center:
     - type: "clock"
         # Documentation on formatting date/time string:
         # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
-      time_formatting: " hh:mm tt"
-        # time_formatting: "hh:mm tt  ddd/MMM/d"
-        # - type: "text"
-        #   text: "󰍹 "
-        #   # text: " 󰌢  󰍹 "
-        #   font_size: "18"
-        # - type: "window title"
-        #   foreground: *green
-        #   padding: "0 1px"
-        #   background: *blue
-        #   border_width: "4"
-        #   border_radius: "10"
-        #   border_color: *blue
+      time_formatting: "hh:mm tt"
       background: *crust
-      font_weight: 600
       foreground: *mauve
-      font_size: 13
       margin: "0 5 0 5"
       padding: "0 6 0 6"
       border_color: *crust
       border_radius: "5"
       border_width: "5"
+      label: "<attr fs='17'> </attr>{formatted_time}"
 
   components_right:
 
@@ -329,6 +200,18 @@ horiz_bar: &horizontal_bar
       border_color: *crust
       border_radius: "5"
       border_width: "5"
+
+    - type: "tiling direction"
+      label_horizontal: "󰯌" #⮂ 󰚉 ⬓ 󰯌
+      label_vertical: "󰯋" #⮁ 󰚈 󱂪 󰯋
+      background: *crust #"#ffffff33"
+      foreground: *pink
+      margin: "0 5 0 5"
+      padding: "0 5 0 5"
+      border_width: "5"
+      border_radius: "5"
+      font_size: 20
+      border_color: *crust
 
     - type: "battery"
       label_draining: "<attr fs='16'>󰂂</attr> {battery_level}%"
@@ -359,7 +242,6 @@ horiz_bar: &horizontal_bar
       border_width: "5"
       font_size: 20
 
-
     - type: "volume"
       label_low: "<attr fs='16'>🔊</attr>{volume_level}%"
       label_medium: "<attr fs='16'>🔊</attr>{volume_level}%"
@@ -372,18 +254,6 @@ horiz_bar: &horizontal_bar
       border_width: "5"
       border_radius: "5"
       border_color: *crust
-
-    # - type: "tiling direction"
-    #   label_horizontal: "󰚉" #⮂
-    #   label_vertical: "󰚈" #⮁
-    #   background: *crust #"#ffffff33"
-    #   foreground: *flamingo
-    #   margin: "0 5 0 5"
-    #   padding: "0 5 0 5"
-    #   border_width: "5"
-    #   border_radius: "5"
-    #   font_size: 20
-    #   border_color: *crust
 
     - type: "binding mode"
       background: *crust #"#ffffff33"
@@ -418,11 +288,9 @@ horiz_bar: &horizontal_bar
       border_color: *crust
 
     - type: "clock"
-      padding: "0 3px"
       # Documentation on formatting date/time string:
       # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
-      time_formatting: "󰃵 MM/dd/yyyy"
-        # time_formatting: "hh:mm tt  ddd/MMM/d"
+      time_formatting: "MM/dd/yyyy"
       background: *crust
       foreground: *peach
       margin: "0 3 0 3"
@@ -430,7 +298,7 @@ horiz_bar: &horizontal_bar
       border_color: *crust
       border_radius: "5"
       border_width: "5"
-      font_size: 12
+      label: "<attr fs='16'>󰃵 </attr>{formatted_time}"
 
     - type: "text"
       text: ""
@@ -443,7 +311,7 @@ horiz_bar: &horizontal_bar
       border_radius: "5"
       border_width: "5"
       # left_click_command: "exec C:\\Users\\Andrew Ng\\.glaze-wm\\shutdownTest"
-      left_click_command: "exec '%userprofile%/.glaze-wm/shutdownTest'"
+      left_click_command: "exec '%userprofile%/.glaze-wm/shutdownPC'"
       right_click_command: ""
 
 vert_bar: &vertical_bar
@@ -515,16 +383,6 @@ vert_bar: &vertical_bar
       max_title_length: 20
       max_artist_length: 20
 
-      # components_left:
-      #   - type: "cpu"
-      #     # Change font family (ie. ff) to Comic Sans for part of the label:
-      #     label: "<attr ff='Comic Sans'>CPU:</attr> {percent_usage}%"
-      #
-      #   - type: "battery"
-      #     # Show an icon by using an icon font:
-      #     label_draining: "<attr ff='Material Icons'></attr> {battery_level}%"
-      #       # Multiple attributes can be changed at once:
-      #     label_charging: "{battery_level}% <attr ff='Arial' fg='#228B22' fw='400' fs='13px'>(charging)</attr>"
     # - type: "memory"
     #   label: "<attr fs='14'> </attr>{percent_usage}%" #\ue266
     #   refresh_interval_ms: 1000
@@ -564,28 +422,15 @@ vert_bar: &vertical_bar
     - type: "clock"
         # Documentation on formatting date/time string:
         # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
-      time_formatting: " hh:mm tt"
-        # time_formatting: "hh:mm tt  ddd/MMM/d"
-        # - type: "text"
-        #   text: "󰍹 "
-        #   # text: " 󰌢  󰍹 "
-        #   font_size: "18"
-        # - type: "window title"
-        #   foreground: *green
-        #   padding: "0 1px"
-        #   background: *blue
-        #   border_width: "4"
-        #   border_radius: "10"
-        #   border_color: *blue
+      time_formatting: "hh:mm tt"
       background: *crust
-      font_weight: 600
       foreground: *mauve
-      font_size: 13
       margin: "0 5 0 5"
       padding: "0 6 0 6"
       border_color: *crust
       border_radius: "5"
       border_width: "5"
+      label: "<attr fs='17'> </attr>{formatted_time}"
 
   components_right:
 
@@ -599,6 +444,17 @@ vert_bar: &vertical_bar
     #   border_color: *crust
     #   border_radius: "5"
     #   border_width: "5"
+    - type: "tiling direction"
+      label_horizontal: "󰯌" #⮂ 󰚉 ⬓ 󰯌
+      label_vertical: "󰯋" #⮁ 󰚈 󱂪 󰯋
+      background: *crust #"#ffffff33"
+      foreground: *pink
+      margin: "0 5 0 5"
+      padding: "0 5 0 5"
+      border_width: "5"
+      border_radius: "5"
+      font_size: 20
+      border_color: *crust
 
     - type: "battery"
       label_draining: "<attr fs='16'>󰂂</attr> {battery_level}%"
@@ -643,18 +499,6 @@ vert_bar: &vertical_bar
       border_radius: "5"
       border_color: *crust
 
-    # - type: "tiling direction"
-    #   label_horizontal: "󰚉" #⮂
-    #   label_vertical: "󰚈" #⮁
-    #   background: *crust #"#ffffff33"
-    #   foreground: *flamingo
-    #   margin: "0 5 0 5"
-    #   padding: "0 5 0 5"
-    #   border_width: "5"
-    #   border_radius: "5"
-    #   font_size: 20
-    #   border_color: *crust
-
     - type: "binding mode"
       background: *crust #"#ffffff33"
       foreground: *red
@@ -688,11 +532,9 @@ vert_bar: &vertical_bar
       border_color: *crust
 
     - type: "clock"
-      padding: "0 3px"
       # Documentation on formatting date/time string:
       # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
-      time_formatting: "󰃵 MM/dd/yyyy"
-        # time_formatting: "hh:mm tt  ddd/MMM/d"
+      time_formatting: "MM/dd/yyyy"
       background: *crust
       foreground: *peach
       margin: "0 3 0 3"
@@ -700,7 +542,7 @@ vert_bar: &vertical_bar
       border_color: *crust
       border_radius: "5"
       border_width: "5"
-      font_size: 12
+      label: "<attr fs='16'>󰃵 </attr>{formatted_time}"
 
     - type: "text"
       text: ""
@@ -712,7 +554,7 @@ vert_bar: &vertical_bar
       border_color: *crust
       border_radius: "5"
       border_width: "5"
-      left_click_command: ""
+      left_click_command: "exec '%userprofile%/.glaze-wm/shutdownPC'"
       right_click_command: ""
 
 bars:
@@ -720,287 +562,6 @@ bars:
     <<: *horizontal_bar
   - bind_to_monitor: 2
     <<: *vertical_bar
-# bar:
-#   height: "32px"
-#   position: "top"
-#   opacity: 1.0
-#   # background: *crust #"transparent" #*crust #"#20242cc4"
-#   foreground: *mauve #"#ffffff"
-#   background: "transparent"
-#   font_family: "JetBrainsMonoNL Nerd Font" #"Segoe UI""JetBrainsMonoNL Nerd Font"
-#   font_size: "12px"
-#   font_weight: "400"
-#   padding: "0px 6px"
-#   offset_x: "9"
-#   offset_y: "5"
-#   # border_radius: "6"
-#   # border_width: "1"
-#   # border_color: *lavender
-#   # padding: "5px"
-#   components_left:
-#
-#     - type: "text"
-#       text: ""
-#       border_width: "5"
-#       border_radius: "5"
-#       padding: "0 2 0 0"
-#       background: *crust
-#       margin: "0 -7 0 0"
-#       border_color: *crust
-#
-#     - type: "image"
-#       #change to your repo config path with the image
-#       # source: "C:\\Users\\Andrew Ng\\.glaze-wm\\pacman.png"
-#       # site: https://icons8.com/icons/set/pacman
-#       source: "C:\\Users\\Andrew Ng\\.glaze-wm\\icons8-pacman-24.png"
-#       background: *crust
-#       border_width: "0 0 0 0"
-#       border_radius: "6"
-#       padding: "3 4 3 4"
-#       border_color: *crust
-#
-#     # making the border after the pacman img 
-#     - type: "text"
-#       text: ""
-#       background: *crust
-#       margin: "0px -6px 0px -6px"
-#       border_width: "2 0 2 0"
-#       border_color: *crust
-#
-#     - type: "workspaces"
-#       focused_workspace_background: "transparent" #"#ffffff33" # *mauve
-#       focused_workspace_foreground: "#3fe86c" # *crust #red
-#       displayed_workspace_background: "transparent" #*yellow # *surface0 #"#00000033"
-#       default_workspace_background: "transparent"
-#       background: *crust
-#       padding: "0px 4px 0px 0px"
-#       margin: "0 0 0 -5"
-#       border_width: "5 0 5 0"
-#       border_radius: "5"
-#       border_color: *crust
-#       font_size: 16
-#
-#     # the right border for workspaces
-#     - type: "text"
-#       text: ""
-#       border_width: "5"
-#       border_radius: "5"
-#       padding: "0 0 0 0"
-#       background: *crust
-#       margin: "0 0 0 -7"
-#       border_color: *crust
-#
-#     - type: "music"
-#       margin: "0 3 0 7"
-#       border_width: "5"
-#       border_color: *crust
-#       border_radius: "5"
-#       padding: "0 5 0 5"
-#       background: *crust
-#       foreground: *blue
-#       label_not_playing: ""
-#       label_paused: "<attr fs='16'>󰎊</attr> {song_title}  {artist_name} <attr fs='16'>󰎊</attr>" #󰓇
-#       label_playing: "<attr fs='16'>󰎈</attr> {song_title}  {artist_name} <attr fs='16'>󰎈</attr>"
-#       max_title_length: 20
-#       max_artist_length: 20
-#
-#       # components_left:
-#       #   - type: "cpu"
-#       #     # Change font family (ie. ff) to Comic Sans for part of the label:
-#       #     label: "<attr ff='Comic Sans'>CPU:</attr> {percent_usage}%"
-#       #
-#       #   - type: "battery"
-#       #     # Show an icon by using an icon font:
-#       #     label_draining: "<attr ff='Material Icons'></attr> {battery_level}%"
-#       #       # Multiple attributes can be changed at once:
-#       #     label_charging: "{battery_level}% <attr ff='Arial' fg='#228B22' fw='400' fs='13px'>(charging)</attr>"
-#     - type: "memory"
-#       label: "<attr fs='14'> </attr>{percent_usage}%" #\ue266
-#       refresh_interval_ms: 1000
-#       background: *crust
-#       foreground: *green
-#       margin: "0 3 0 3"
-#       border_radius: "5"
-#       border_color: *crust
-#       border_width: "5"
-#       padding: "0 6 0 6"
-#
-#     - type: "cpu"
-#       label: "<attr fs='14'> </attr>{percent_usage}%"
-#       refresh_interval_ms: 1000
-#       background: *crust
-#       foreground: *sapphire
-#       margin: "0 3 0 3"
-#       padding: "0 6 0 6"
-#       border_color: *crust
-#       border_radius: "5"
-#       border_width: "5"
-#
-#     - type: "gpu"
-#       label: "<attr fs='16'>󱝊 </attr>{percent_usage}%" #testing󰐿
-#       refresh_interval_ms: 1000
-#       background: *crust
-#       foreground: *lavender
-#       margin: "0 3 0 3"
-#       padding: "0 6 0 6"
-#       border_color: *crust
-#       border_radius: "5"
-#       border_width: "5"
-#
-#
-#
-#   components_center:
-#     - type: "clock"
-#         # Documentation on formatting date/time string:
-#         # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
-#       time_formatting: " hh:mm tt"
-#         # time_formatting: "hh:mm tt  ddd/MMM/d"
-#         # - type: "text"
-#         #   text: "󰍹 "
-#         #   # text: " 󰌢  󰍹 "
-#         #   font_size: "18"
-#         # - type: "window title"
-#         #   foreground: *green
-#         #   padding: "0 1px"
-#         #   background: *blue
-#         #   border_width: "4"
-#         #   border_radius: "10"
-#         #   border_color: *blue
-#       background: *crust
-#       font_weight: 600
-#       foreground: *mauve
-#       font_size: 13
-#       margin: "0 5 0 5"
-#       padding: "0 6 0 6"
-#       border_color: *crust
-#       border_radius: "5"
-#       border_width: "5"
-#
-#   components_right:
-#
-#     - type: "system tray"
-#       label_expand_text:  " " #
-#       label_collapse_text: " "
-#       background: *crust
-#       foreground: *crust
-#       margin: "0 3 0 3"
-#       padding: "0 7 0 0"
-#       border_color: *crust
-#       border_radius: "5"
-#       border_width: "5"
-#
-#     - type: "battery"
-#       label_draining: "<attr fs='16'>󰂂</attr> {battery_level}%"
-#       label_power_saver: "<attr fs='16'>󰂂</attr> {battery_level}%"
-#       label_charging: "<attr fs='16'>󰂋 </attr>{battery_level}%"
-#       background: *crust
-#       foreground: *teal
-#       margin: "0 3 0 3"
-#       padding: "0 7 0 6"
-#       border_color: *crust
-#       border_radius: "5"
-#       border_width: "5"
-#
-#     - type: "network"
-#       label_no_internet: " "
-#       label_ethernet: "󰈁"
-#       label_wifi_strength_0: "󰤭 "
-#       label_wifi_strength_25: "󰤟 "
-#       label_wifi_strength_50: "󰤢 "
-#       label_wifi_strength_75: "󰤥 "
-#       label_wifi_strength_100: "󰤨 "
-#       background: *crust
-#       foreground: *subtext1
-#       margin: "0 3 0 3" #-18 to fit with volume component
-#       padding: "0 8 0 6"
-#       border_color: *crust
-#       border_radius: "5"
-#       border_width: "5"
-#       font_size: 20
-#
-#
-#     - type: "volume"
-#       label_low: "<attr fs='16'>🔊</attr>{volume_level}%"
-#       label_medium: "<attr fs='16'>🔊</attr>{volume_level}%"
-#       label_high: "<attr fs='16'>🔊</attr>{volume_level}%"
-#       label_mute: "<attr fs='16'>🔊</attr>{volume_level}%"
-#       background: *crust #"#ffffff33"
-#       foreground: *flamingo
-#       margin: "0 3 0 3"
-#       padding: "0 9 0 6"
-#       border_width: "5"
-#       border_radius: "5"
-#       border_color: *crust
-#
-#     # - type: "tiling direction"
-#     #   label_horizontal: "󰚉" #⮂
-#     #   label_vertical: "󰚈" #⮁
-#     #   background: *crust #"#ffffff33"
-#     #   foreground: *flamingo
-#     #   margin: "0 5 0 5"
-#     #   padding: "0 5 0 5"
-#     #   border_width: "5"
-#     #   border_radius: "5"
-#     #   font_size: 20
-#     #   border_color: *crust
-#
-#     - type: "binding mode"
-#       background: *crust #"#ffffff33"
-#       foreground: *red
-#       margin: "0 3 0 3"
-#       padding: "0 6 0 6"
-#       border_width: "5"
-#       font_weight: 900
-#       border_radius: "5"
-#       border_color: *crust
-#
-#     - type: "weather"
-#       latitude: 49.238889
-#       longitude: -123.054167
-#       label: "{temperature_celsius}°C"
-#       label_sun: "<attr fs='14'>☀️ </attr>{temperature_celsius}°C"
-#       label_moon: "<attr fs='14'>🌙 </attr>{temperature_celsius}°C"
-#       label_cloud_moon: "<attr fs='14'>🌙☁️ </attr>{temperature_celsius}°C"
-#       label_cloud_sun: "<attr fs='14'>⛅ </attr>{temperature_celsius}°C"
-#       label_cloud_moon_rain: "<attr fs='14'>🌙🌧️ </attr>{temperature_celsius}°C"
-#       label_cloud_sun_rain: "<attr fs='14'>🌦️ </attr>{temperature_celsius}°C"
-#       label_cloud_rain: "<attr fs='14'>🌧️ </attr>{temperature_celsius}°C"
-#       label_snow_flake: "<attr fs='14'>❄️ </attr>{temperature_celsius}°C"
-#       label_thunderstorm: "<attr fs='14'>⚡ </attr>{temperature_celsius}°C"
-#       label_cloud: "<attr fs='14'>☁️ </attr>{temperature_celsius}°C"
-#       background: *crust #"#ffffff33"
-#       foreground: *rosewater
-#       margin: "0 3 0 3"
-#       padding: "0 8 0 6"
-#       border_width: "5"
-#       border_radius: "5"
-#       border_color: *crust
-#
-#     - type: "clock"
-#       padding: "0 3px"
-#       # Documentation on formatting date/time string:
-#       # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
-#       time_formatting: "󰃵 MM/dd/yyyy"
-#         # time_formatting: "hh:mm tt  ddd/MMM/d"
-#       background: *crust
-#       foreground: *peach
-#       margin: "0 3 0 3"
-#       padding: "0 6 0 6"
-#       border_color: *crust
-#       border_radius: "5"
-#       border_width: "5"
-#       font_size: 12
-#
-#     - type: "text"
-#       text: ""
-#       background: *crust
-#       foreground: *red
-#       margin: "0 3 0 3"
-#       padding: "0 9 0 6"
-#       font_size: 14
-#       border_color: *crust
-#       border_radius: "5"
-#       border_width: "5"
 
 workspaces: #possible icons - " "
   # not monitor 1 = horizontal monitor and not the vertical monitor despite the settings identifying otherwise

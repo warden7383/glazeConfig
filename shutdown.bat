@@ -5,7 +5,7 @@
 ::YAwzuBVtJxjWCl3EqQJgSA==
 ::ZR4luwNxJguZRRnk
 ::Yhs/ulQjdFy5
-::cxAkpRVqdFKZSzk=
+::cxAkpRVqdFKZSjk=
 ::cBs/ulQjdFy5
 ::ZR41oxFsdFKZSDk=
 ::eBoioBt6dFKZSDk=
@@ -35,8 +35,6 @@
 :BEGIN
 ECHO.
 ECHO.
-ECHO.
-
 ECHO ^|----------------------Powering Off-------------------------^|
 ECHO ^|   ^>Press 1 to shutdown the computer.                      ^|
 ECHO ^|   ^>Press 2 to restart the computer.                       ^|
@@ -50,12 +48,9 @@ IF ERRORLEVEL ==1 GOTO SHUTDOWN
 
 GOTO QUIT
 :SHUTDOWN
-ECHO shutdow
-REM shutdown.exe /f
+shutdown.exe /f
 GOTO QUIT
 :RESTART
-ECHO restart
-REM shutdown.exe /r
+shutdown.exe /r
 :QUIT
-ECHO quit
 exit
