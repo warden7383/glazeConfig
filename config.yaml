@@ -89,7 +89,7 @@ horiz_bar: &horizontal_bar
       #change to your repo config path with the image
       # source: "C:\\Users\\Andrew Ng\\.glaze-wm\\pacman.png"
       # site: https://icons8.com/icons/set/pacman
-      source: "C:\\Users\\Andrew Ng\\.glaze-wm\\icons8-pacman-24.png"
+      source: "C:\\Users\\NgAnd\\.glaze-wm\\icons8-pacman-24.png"
       background: *crust
       border_width: "0 0 0 0"
       border_radius: "6"
@@ -142,7 +142,7 @@ horiz_bar: &horizontal_bar
     #   max_artist_length: 20
 
     - type: text file # Play/pause icon
-      file_path: "C:/Users/Andrew Ng/.glaze-wm/scripts/song_playing.txt"
+      file_path: "C:/Users/NgAnd/.glaze-wm/scripts/song_playing.txt"
       font_size: 16
       padding: 0 6 0 4
       margin: "0 0 0 7"
@@ -154,7 +154,7 @@ horiz_bar: &horizontal_bar
       foreground: *blue
 
     - type: text file # Song title underlined section
-      file_path: "C:/Users/Andrew Ng/.glaze-wm/scripts/song_info_1.txt"
+      file_path: "C:/Users/NgAnd/.glaze-wm/scripts/song_info_1.txt"
       padding: 3 1 0 0
       margin: 0 0 0 0
       background: *crust
@@ -164,7 +164,7 @@ horiz_bar: &horizontal_bar
       border_color: *blue
 
     - type: text file # Song title non-underlined section
-      file_path: "C:/Users/Andrew Ng/.glaze-wm/scripts/song_info_2.txt"
+      file_path: "C:/Users/NgAnd/.glaze-wm/scripts/song_info_2.txt"
       padding: 3 1 0 0
       margin: 0 0 0 0
       background: *crust
@@ -174,7 +174,7 @@ horiz_bar: &horizontal_bar
       border_color: *crust
 
     - type: text file # Play/pause icon
-      file_path: "C:/Users/Andrew Ng/.glaze-wm/scripts/song_playing.txt"
+      file_path: "C:/Users/NgAnd/.glaze-wm/scripts/song_playing.txt"
       font_size: 16
       font_family: "JetBrainsMonoNL Nerd Font"
       padding: 0 4 0 7
@@ -389,7 +389,7 @@ vert_bar: &vertical_bar
       #change to your repo config path with the image
       # source: "C:\\Users\\Andrew Ng\\.glaze-wm\\pacman.png"
       # site: https://icons8.com/icons/set/pacman
-      source: "C:\\Users\\Andrew Ng\\.glaze-wm\\icons8-pacman-24.png"
+      source: "C:\\Users\\NgAnd\\.glaze-wm\\icons8-pacman-24.png"
       background: *crust
       border_width: "0 0 0 0"
       border_radius: "6"
@@ -442,7 +442,7 @@ vert_bar: &vertical_bar
     #   max_artist_length: 20
 
     - type: text file # Play/pause icon
-      file_path: "C:/Users/Andrew Ng/.glaze-wm/scripts/song_playing.txt"
+      file_path: "C:/Users/NgAnd/.glaze-wm/scripts/song_playing.txt"
       font_size: 16
       padding: 0 6 0 4
       margin: "0 0 0 7"
@@ -454,7 +454,7 @@ vert_bar: &vertical_bar
       foreground: *blue
 
     - type: text file # Song title underlined section
-      file_path: "C:/Users/Andrew Ng/.glaze-wm/scripts/song_info_1.txt"
+      file_path: "C:/Users/NgAnd/.glaze-wm/scripts/song_info_1.txt"
       padding: 3 1 0 0
       margin: 0 0 0 0
       background: *crust
@@ -464,7 +464,7 @@ vert_bar: &vertical_bar
       border_color: *blue
 
     - type: text file # Song title non-underlined section
-      file_path: "C:/Users/Andrew Ng/.glaze-wm/scripts/song_info_2.txt"
+      file_path: "C:/Users/NgAnd/.glaze-wm/scripts/song_info_2.txt"
       padding: 3 1 0 0
       margin: 0 0 0 0
       background: *crust
@@ -474,7 +474,7 @@ vert_bar: &vertical_bar
       border_color: *crust
 
     - type: text file # Play/pause icon
-      file_path: "C:/Users/Andrew Ng/.glaze-wm/scripts/song_playing.txt"
+      file_path: "C:/Users/NgAnd/.glaze-wm/scripts/song_playing.txt"
       font_size: 16
       padding: 0 4 0 7
       border_width: "0 5 0 0"
