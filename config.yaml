@@ -264,17 +264,17 @@ horiz_bar: &horizontal_bar
       font_size: 20
       border_color: *crust
 
-    - type: "battery"
-      label_draining: "<attr fs='16'>󰂂</attr> {battery_level}%"
-      label_power_saver: "<attr fs='16'>󰂂</attr> {battery_level}%"
-      label_charging: "<attr fs='16'>󰂋 </attr>{battery_level}%"
-      background: *crust
-      foreground: *teal
-      margin: "0 3 0 3"
-      padding: "0 7 0 6"
-      border_color: *crust
-      border_radius: "5"
-      border_width: "5"
+    # - type: "battery"
+    #   label_draining: "<attr fs='16'>󰂂</attr> {battery_level}%"
+    #   label_power_saver: "<attr fs='16'>󰂂</attr> {battery_level}%"
+    #   label_charging: "<attr fs='16'>󰂋 </attr>{battery_level}%"
+    #   background: *crust
+    #   foreground: *teal
+    #   margin: "0 3 0 3"
+    #   padding: "0 7 0 6"
+    #   border_color: *crust
+    #   border_radius: "5"
+    #   border_width: "5"
 
     - type: "network"
       label_no_internet: " "
@@ -565,17 +565,17 @@ vert_bar: &vertical_bar
       font_size: 20
       border_color: *crust
 
-    - type: "battery"
-      label_draining: "<attr fs='16'>󰂂</attr> {battery_level}%"
-      label_power_saver: "<attr fs='16'>󰂂</attr> {battery_level}%"
-      label_charging: "<attr fs='16'>󰂋 </attr>{battery_level}%"
-      background: *crust
-      foreground: *teal
-      margin: "0 3 0 3"
-      padding: "0 7 0 6"
-      border_color: *crust
-      border_radius: "5"
-      border_width: "5"
+    # - type: "battery"
+    #   label_draining: "<attr fs='16'>󰂂</attr> {battery_level}%"
+    #   label_power_saver: "<attr fs='16'>󰂂</attr> {battery_level}%"
+    #   label_charging: "<attr fs='16'>󰂋 </attr>{battery_level}%"
+    #   background: *crust
+    #   foreground: *teal
+    #   margin: "0 3 0 3"
+    #   padding: "0 7 0 6"
+    #   border_color: *crust
+    #   border_radius: "5"
+    #   border_width: "5"
 
     - type: "network"
       label_no_internet: " "
