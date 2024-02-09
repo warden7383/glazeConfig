@@ -10,4 +10,5 @@ TODO: ~~add [IPC?](https://github.com/glazerdesktop/GlazeWM-js?tab=readme-ov-fil
 - 
 
 # Credits:
-- **I do not own the auto tiling or music component scripts**
+- [autotiling script](https://github.com/cigh033/GlazeWM-autotiling-python)
+- Special thanks to @.danub from the glazewm discord server for sharing his music component.
