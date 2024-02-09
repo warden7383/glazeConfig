@@ -9,4 +9,5 @@ TODO: ~~add [IPC?](https://github.com/glazerdesktop/GlazeWM-js?tab=readme-ov-fil
 - Goto: Settings > Time & Lanugage > Typing > Advanced keyboard settings > **Input language hot keys**
 - 
 
-**I do not own the auto tiling or music component scripts**
+# Credits:
+- **I do not own the auto tiling or music component scripts**
