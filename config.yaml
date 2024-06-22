@@ -427,20 +427,6 @@ vert_bar: &vertical_bar
       margin: "0 0 0 -7"
       border_color: *crust
 
-    # - type: "music"
-    #   margin: "0 3 0 7"
-    #   border_width: "5"
-    #   border_color: *crust
-    #   border_radius: "5"
-    #   padding: "0 5 0 5"
-    #   background: *crust
-    #   foreground: *blue
-    #   label_not_playing: ""
-    #   label_paused: "<attr fs='16'>󰎊</attr> {song_title}  {artist_name} <attr fs='16'>󰎊</attr>" #󰓇
-    #   label_playing: "<attr fs='16'>󰎈</attr> {song_title}  {artist_name} <attr fs='16'>󰎈</attr>"
-    #   max_title_length: 20
-    #   max_artist_length: 20
-
     - type: text file # Play/pause icon
       file_path: "C:/Users/Andrew Ng/.glaze-wm/scripts/song_playing.txt"
       font_size: 16
@@ -492,40 +478,6 @@ vert_bar: &vertical_bar
       # left_click_command: "exec pythonw C:\\Users\\'Andrew Ng'\\.glaze-wm\\scripts\\toggle_pause.py"
       left_click_command: "exec '%userprofile%/.glaze-wm/scripts/toggle_pause'"
 
-    # - type: "memory"
-    #   label: "<attr fs='14'> </attr>{percent_usage}%" #\ue266
-    #   refresh_interval_ms: 1000
-    #   background: *crust
-    #   foreground: *green
-    #   margin: "0 3 0 3"
-    #   border_radius: "5"
-    #   border_color: *crust
-    #   border_width: "5"
-    #   padding: "0 6 0 6"
-    #
-    # - type: "cpu"
-    #   label: "<attr fs='14'> </attr>{percent_usage}%"
-    #   refresh_interval_ms: 1000
-    #   background: *crust
-    #   foreground: *sapphire
-    #   margin: "0 3 0 3"
-    #   padding: "0 6 0 6"
-    #   border_color: *crust
-    #   border_radius: "5"
-    #   border_width: "5"
-    #
-    # - type: "gpu"
-    #   label: "<attr fs='16'>󱝊 </attr>{percent_usage}%" #testing󰐿
-    #   refresh_interval_ms: 1000
-    #   background: *crust
-    #   foreground: *lavender
-    #   margin: "0 3 0 3"
-    #   padding: "0 6 0 6"
-    #   border_color: *crust
-    #   border_radius: "5"
-    #   border_width: "5"
-
-
 
   components_center:
     - type: "clock"
@@ -542,17 +494,6 @@ vert_bar: &vertical_bar
       label: "<attr fs='17'> </attr>{formatted_time}"
 
   components_right:
-
-    # - type: "system tray"
-    #   label_expand_text:  " " #
-    #   label_collapse_text: " "
-    #   background: *crust
-    #   foreground: *crust
-    #   margin: "0 3 0 3"
-    #   padding: "0 7 0 0"
-    #   border_color: *crust
-    #   border_radius: "5"
-    #   border_width: "5"
     - type: "tiling direction"
       label_horizontal: "󰯌" #⮂ 󰚉 ⬓ 󰯌
       label_vertical: "󰯋" #⮁ 󰚈 󱂪 󰯋
@@ -794,16 +735,6 @@ keybindings:
   - command: "move down"
     bindings: ["Alt+Shift+J", "Alt+Shift+Down"]
 
-  # Resize focused window by a percentage or pixel amount.
-  # - command: "resize width -2%"
-  #   binding: "Alt+U"
-  # - command: "resize width +2%"
-  #   binding: "Alt+P"
-  # - command: "resize height +2%"
-  #   binding: "Alt+O"
-  # - command: "resize height -2%"
-  #   binding: "Alt+I"
-
   # As an alternative to the resize keybindings above, resize mode enables resizing via
   # HJKL or arrow keys. The binding mode is defined above with the name "resize".
   - command: "binding mode resize"
@@ -887,10 +818,6 @@ keybindings:
     binding: "Alt+A"
   - command: "move workspace right"
     binding: "Alt+F"
-  # - command: "move workspace up"
-  #   binding: "Alt+D"
-  # - command: "move workspace down"
-  #   binding: "Alt+S"
 
   # Move focused window to a workspace defined in `workspaces` config.
   - commands: ["move to workspace 1", "focus workspace 1"]
