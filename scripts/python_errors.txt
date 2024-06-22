@@ -1,0 +1,114 @@
+[2024-03-09 11:36:34.703765]
+'NoneType' object has no attribute 'position'
+Traceback (most recent call last):
+  File "now_playing.py", line 53, in <module>
+    data = asyncio.run(get_song_info(current_session))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncio\runners.py", line 190, in run
+  File "asyncio\runners.py", line 118, in run
+  File "asyncio\base_events.py", line 653, in run_until_complete
+  File "now_playing.py", line 29, in get_song_info
+    split_index = int(timeline_info.position.total_seconds() / timeline_info.end_time.total_seconds() * len(media_str_full))
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'position'
+
+
+[2024-03-16 17:37:43.962415]
+'NoneType' object has no attribute 'position'
+Traceback (most recent call last):
+  File "now_playing.py", line 53, in <module>
+    data = asyncio.run(get_song_info(current_session))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncio\runners.py", line 190, in run
+  File "asyncio\runners.py", line 118, in run
+  File "asyncio\base_events.py", line 653, in run_until_complete
+  File "now_playing.py", line 29, in get_song_info
+    split_index = int(timeline_info.position.total_seconds() / timeline_info.end_time.total_seconds() * len(media_str_full))
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'position'
+
+
+[2024-04-25 17:03:14.771547]
+'NoneType' object has no attribute 'position'
+Traceback (most recent call last):
+  File "now_playing.py", line 53, in <module>
+    data = asyncio.run(get_song_info(current_session))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncio\runners.py", line 190, in run
+  File "asyncio\runners.py", line 118, in run
+  File "asyncio\base_events.py", line 653, in run_until_complete
+  File "now_playing.py", line 29, in get_song_info
+    split_index = int(timeline_info.position.total_seconds() / timeline_info.end_time.total_seconds() * len(media_str_full))
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'position'
+
+
+[2024-05-09 03:39:34.621807]
+'NoneType' object has no attribute 'position'
+Traceback (most recent call last):
+  File "now_playing.py", line 53, in <module>
+    data = asyncio.run(get_song_info(current_session))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncio\runners.py", line 190, in run
+  File "asyncio\runners.py", line 118, in run
+  File "asyncio\base_events.py", line 653, in run_until_complete
+  File "now_playing.py", line 29, in get_song_info
+    split_index = int(timeline_info.position.total_seconds() / timeline_info.end_time.total_seconds() * len(media_str_full))
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'position'
+
+
+[2024-05-15 23:02:44.783398]
+[Errno 22] Invalid argument: 'song_info_2.txt'
+Traceback (most recent call last):
+  File "now_playing.py", line 61, in <module>
+    with open("song_info_2.txt", "w", encoding="utf-8") as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'song_info_2.txt'
+
+
+[2024-05-26 21:11:47.566908]
+'NoneType' object has no attribute 'position'
+Traceback (most recent call last):
+  File "now_playing.py", line 53, in <module>
+    data = asyncio.run(get_song_info(current_session))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncio\runners.py", line 190, in run
+  File "asyncio\runners.py", line 118, in run
+  File "asyncio\base_events.py", line 653, in run_until_complete
+  File "now_playing.py", line 29, in get_song_info
+    split_index = int(timeline_info.position.total_seconds() / timeline_info.end_time.total_seconds() * len(media_str_full))
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'position'
+
+
+[2024-06-05 01:47:35.248773]
+'NoneType' object has no attribute 'position'
+Traceback (most recent call last):
+  File "now_playing.py", line 53, in <module>
+    data = asyncio.run(get_song_info(current_session))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncio\runners.py", line 190, in run
+  File "asyncio\runners.py", line 118, in run
+  File "asyncio\base_events.py", line 653, in run_until_complete
+  File "now_playing.py", line 29, in get_song_info
+    split_index = int(timeline_info.position.total_seconds() / timeline_info.end_time.total_seconds() * len(media_str_full))
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'position'
+
+
+[2024-06-07 14:41:49.316103]
+'NoneType' object has no attribute 'position'
+Traceback (most recent call last):
+  File "now_playing.py", line 53, in <module>
+    data = asyncio.run(get_song_info(current_session))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncio\runners.py", line 190, in run
+  File "asyncio\runners.py", line 118, in run
+  File "asyncio\base_events.py", line 653, in run_until_complete
+  File "now_playing.py", line 29, in get_song_info
+    split_index = int(timeline_info.position.total_seconds() / timeline_info.end_time.total_seconds() * len(media_str_full))
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'position'
+
+

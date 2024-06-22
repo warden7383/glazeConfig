@@ -264,18 +264,6 @@ horiz_bar: &horizontal_bar
       font_size: 20
       border_color: *crust
 
-    # - type: "battery"
-    #   label_draining: "<attr fs='16'>󰂂</attr> {battery_level}%"
-    #   label_power_saver: "<attr fs='16'>󰂂</attr> {battery_level}%"
-    #   label_charging: "<attr fs='16'>󰂋 </attr>{battery_level}%"
-    #   background: *crust
-    #   foreground: *teal
-    #   margin: "0 3 0 3"
-    #   padding: "0 7 0 6"
-    #   border_color: *crust
-    #   border_radius: "5"
-    #   border_width: "5"
-
     - type: "network"
       label_no_internet: " "
       label_ethernet: "󰈁"
@@ -492,40 +480,6 @@ vert_bar: &vertical_bar
       # left_click_command: "exec pythonw C:\\Users\\'Andrew Ng'\\.glaze-wm\\scripts\\toggle_pause.py"
       left_click_command: "exec '%userprofile%/.glaze-wm/scripts/toggle_pause'"
 
-    # - type: "memory"
-    #   label: "<attr fs='14'> </attr>{percent_usage}%" #\ue266
-    #   refresh_interval_ms: 1000
-    #   background: *crust
-    #   foreground: *green
-    #   margin: "0 3 0 3"
-    #   border_radius: "5"
-    #   border_color: *crust
-    #   border_width: "5"
-    #   padding: "0 6 0 6"
-    #
-    # - type: "cpu"
-    #   label: "<attr fs='14'> </attr>{percent_usage}%"
-    #   refresh_interval_ms: 1000
-    #   background: *crust
-    #   foreground: *sapphire
-    #   margin: "0 3 0 3"
-    #   padding: "0 6 0 6"
-    #   border_color: *crust
-    #   border_radius: "5"
-    #   border_width: "5"
-    #
-    # - type: "gpu"
-    #   label: "<attr fs='16'>󱝊 </attr>{percent_usage}%" #testing󰐿
-    #   refresh_interval_ms: 1000
-    #   background: *crust
-    #   foreground: *lavender
-    #   margin: "0 3 0 3"
-    #   padding: "0 6 0 6"
-    #   border_color: *crust
-    #   border_radius: "5"
-    #   border_width: "5"
-
-
 
   components_center:
     - type: "clock"
@@ -543,16 +497,6 @@ vert_bar: &vertical_bar
 
   components_right:
 
-    # - type: "system tray"
-    #   label_expand_text:  " " #
-    #   label_collapse_text: " "
-    #   background: *crust
-    #   foreground: *crust
-    #   margin: "0 3 0 3"
-    #   padding: "0 7 0 0"
-    #   border_color: *crust
-    #   border_radius: "5"
-    #   border_width: "5"
     - type: "tiling direction"
       label_horizontal: "󰯌" #⮂ 󰚉 ⬓ 󰯌
       label_vertical: "󰯋" #⮁ 󰚈 󱂪 󰯋
@@ -564,18 +508,6 @@ vert_bar: &vertical_bar
       border_radius: "5"
       font_size: 20
       border_color: *crust
-
-    # - type: "battery"
-    #   label_draining: "<attr fs='16'>󰂂</attr> {battery_level}%"
-    #   label_power_saver: "<attr fs='16'>󰂂</attr> {battery_level}%"
-    #   label_charging: "<attr fs='16'>󰂋 </attr>{battery_level}%"
-    #   background: *crust
-    #   foreground: *teal
-    #   margin: "0 3 0 3"
-    #   padding: "0 7 0 6"
-    #   border_color: *crust
-    #   border_radius: "5"
-    #   border_width: "5"
 
     - type: "network"
       label_no_internet: " "
@@ -794,16 +726,6 @@ keybindings:
   - command: "move down"
     bindings: ["Alt+Shift+J", "Alt+Shift+Down"]
 
-  # Resize focused window by a percentage or pixel amount.
-  # - command: "resize width -2%"
-  #   binding: "Alt+U"
-  # - command: "resize width +2%"
-  #   binding: "Alt+P"
-  # - command: "resize height +2%"
-  #   binding: "Alt+O"
-  # - command: "resize height -2%"
-  #   binding: "Alt+I"
-
   # As an alternative to the resize keybindings above, resize mode enables resizing via
   # HJKL or arrow keys. The binding mode is defined above with the name "resize".
   - command: "binding mode resize"
@@ -887,10 +809,6 @@ keybindings:
     binding: "Alt+A"
   - command: "move workspace right"
     binding: "Alt+F"
-  # - command: "move workspace up"
-  #   binding: "Alt+D"
-  # - command: "move workspace down"
-  #   binding: "Alt+S"
 
   # Move focused window to a workspace defined in `workspaces` config.
   - commands: ["move to workspace 1", "focus workspace 1"]
