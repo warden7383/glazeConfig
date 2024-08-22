@@ -688,6 +688,12 @@ window_rules:
   - command: "ignore"
     match_class_name: "Qt5154QWindowOwnDCIcon"
 
+  - command: "ignore"
+    match_process_name: "nexon_client"
+
+  - command: "ignore"
+    match_process_name: "MapleStoryM"
+
 binding_modes:
   - name: "resize"
     keybindings:
