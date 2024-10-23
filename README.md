@@ -1,6 +1,7 @@
 # Warden's Personal gwm config
-> [!WARN]
+> [!CAUTION]
 > This is using **glazewm v2** and will not work on its latest version (glazewm v3)
+
 ### Installation:
 `cd` into your glazewm directory and copy the following
 ```
