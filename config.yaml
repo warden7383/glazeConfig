@@ -694,6 +694,9 @@ window_rules:
   - command: "ignore"
     match_process_name: "MapleStoryM"
 
+  - command: "ignore"
+    match_class_name: "RAIL_WINDOW"
+
 binding_modes:
   - name: "resize"
     keybindings:
