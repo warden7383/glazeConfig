@@ -5,7 +5,7 @@
 ::YAwzuBVtJxjWCl3EqQJgSA==
 ::ZR4luwNxJguZRRnk
 ::Yhs/ulQjdF+5
-::cxAkpRVqdFKZSjk=
+::cxAkpRVqdFKZSDk=
 ::cBs/ulQjdF+5
 ::ZR41oxFsdFKZSDk=
 ::eBoioBt6dFKZSDk=
@@ -33,16 +33,21 @@
 ::978f952a14a936cc963da21a135fa983
 @ECHO OFF
 :BEGIN
+SET "FEDORA_GUID={7074c68d-dbf7-11f0-8b5f-806e6f6e6963}"
 ECHO.
 ECHO.
-ECHO ^|----------------------Powering Off-------------------------^|
-ECHO ^|   ^>Press 1 to shutdown the computer.                      ^|
-ECHO ^|   ^>Press 2 to restart the computer.                       ^|
-ECHO ^|   ^>Press Q to quit.                                       ^|
-ECHO ^|-----------------------------------------------------------^|
+ECHO ^|------------------------Powering Off----------------------------^|
+ECHO ^|   ^>Press 1 to shutdown the computer.                          ^|
+ECHO ^|   ^>Press 2 to restart the computer.                           ^|
+ECHO ^|   ^>Press 3 to restart the computer and boot into linux.       ^|
+ECHO ^|   ^>Press 4 to shutdown the computer and boot to linux next.   ^|
+ECHO ^|   ^>Press Q to quit.                                           ^|
+ECHO ^|----------------------------------------------------------------^|
 ECHO.
-CHOICE /N /C 12"q" /M ">Input: "%1
-IF ERRORLEVEL ==3 GOTO QUIT
+CHOICE /N /C 1234"q" /M ">Input: "%1
+IF ERRORLEVEL ==5 GOTO QUIT
+IF ERRORLEVEL ==4 GOTO SHUTDOWN_LINUX
+IF ERRORLEVEL ==3 GOTO REBOOT_LINUX
 IF ERRORLEVEL ==2 GOTO RESTART
 IF ERRORLEVEL ==1 GOTO SHUTDOWN
 
@@ -52,5 +57,15 @@ shutdown.exe /f /p
 GOTO QUIT
 :RESTART
 shutdown.exe /r
+:REBOOT_LINUX
+REM sudo bcdedit /bootsequence "{7074c68e-dbf7-11f0-8b5f-806e6f6e6963}" /addfirst
+sudo bcdedit /set {fwbootmgr} bootsequence %FEDORA_GUID%
+shutdown.exe /r /t 0
+GOTO QUIT
+:SHUTDOWN_LINUX
+REM sudo bcdedit /bootsequence "{7074c68e-dbf7-11f0-8b5f-806e6f6e6963}" /addfirst
+sudo bcdedit /set {fwbootmgr} bootsequence %FEDORA_GUID%
+shutdown.exe /f /p
+GOTO QUIT
 :QUIT
 exit
